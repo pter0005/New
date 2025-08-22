@@ -9,6 +9,7 @@ import ServicesSection from '@/components/services-section';
 import FaqSection from '@/components/faq-section';
 import ContactSection from '@/components/contact-section';
 import WhatsAppFAB from '@/components/whatsapp-fab';
+import Footer from '@/components/footer';
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
           <ContactSection />
         </div>
       </main>
+      <Footer />
       <WhatsAppFAB />
     </div>
   );
