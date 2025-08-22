@@ -85,7 +85,7 @@ export default function PortfolioSection() {
           </div>
 
           {selectedProject && (
-            <DialogContent className="sm:max-w-3xl glassmorphism p-0 border-primary/30">
+            <DialogContent className="sm:max-w-5xl glassmorphism p-0 border-primary/30">
               <DialogHeader className="p-6 pb-0">
                 <DialogTitle className="text-2xl font-bold text-primary">{selectedProject.name}</DialogTitle>
                 <DialogDescription>{selectedProject.type}</DialogDescription>
