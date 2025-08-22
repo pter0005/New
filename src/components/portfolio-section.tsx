@@ -3,12 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
-  { name: "Team VEO3", type: "Website Institucional", image: "https://placehold.co/800x450.png", hint: "ia videos", link: "https://www.teamveo3.com/" },
-  { name: "Neon Store", type: "Loja Virtual", image: "https://placehold.co/800x450.png", hint: "neon shop", link: "#" },
-  { name: "Data Viz", type: "Dashboard Analítico", image: "https://placehold.co/800x450.png", hint: "data dashboard", link: "#" },
-  { name: "Gourmet Burger", type: "Site de Restaurante", image: "https://placehold.co/800x450.png", hint: "restaurant website", link: "#" },
-  { name: "Barber Shop", type: "Sistema para Barbearias", image: "https://placehold.co/800x450.png", hint: "barber shop", link: "#" },
-  { name: "Fit Tracker", type: "Sistema de Personal Trainer", image: "https://placehold.co/800x450.png", hint: "fitness app", link: "#" },
+  { name: "Team VEO3", type: "Website Institucional", image: "https://placehold.co/800x600.png", hint: "ia videos", link: "https://www.teamveo3.com/" },
+  { name: "Neon Store", type: "Loja Virtual", image: "https://placehold.co/800x600.png", hint: "neon shop", link: "#" },
+  { name: "Data Viz", type: "Dashboard Analítico", image: "https://placehold.co/800x600.png", hint: "data dashboard", link: "#" },
+  { name: "Gourmet Burger", type: "Site de Restaurante", image: "https://placehold.co/800x600.png", hint: "restaurant website", link: "#" },
+  { name: "Barber Shop", type: "Sistema para Barbearias", image: "https://placehold.co/800x600.png", hint: "barber shop", link: "#" },
+  { name: "Fit Tracker", type: "Sistema de Personal Trainer", image: "https://placehold.co/800x600.png", hint: "fitness app", link: "#" },
 ];
 
 export default function PortfolioSection() {
@@ -29,7 +29,7 @@ export default function PortfolioSection() {
                   src={project.image}
                   alt={`Mockup do projeto ${project.name}`}
                   width={800}
-                  height={450}
+                  height={600}
                   data-ai-hint={project.hint}
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
                 />
