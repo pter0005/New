@@ -1,37 +1,68 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from './ui/button';
 import Link from 'next/link';
 
-export default function HeroSection() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isMounted, setIsMounted] = useState(false);
+const Letter = ({ children }: { children: React.ReactNode }) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const ref = useRef<HTMLDivElement>(null);
+  const animationFrameId = useRef<number>();
 
   useEffect(() => {
-    setIsMounted(true);
     const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+
+      animationFrameId.current = requestAnimationFrame(() => {
+        if (!ref.current) return;
+
+        const rect = ref.current.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const deltaX = event.clientX - centerX;
+        const deltaY = event.clientY - centerY;
+
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        const repulsionRadius = 150; // Raio de interação
+
+        if (distance < repulsionRadius) {
+          const force = 1 - distance / repulsionRadius;
+          const moveX = -(deltaX / distance) * force * 40; // Força do movimento
+          const moveY = -(deltaY / distance) * force * 40;
+          setPosition({ x: moveX, y: moveY });
+        } else {
+          setPosition({ x: 0, y: 0 });
+        }
+      });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
     };
   }, []);
 
-  const calculateTransform = (factor: number) => {
-    if (!isMounted) {
-      return 'none';
-    }
-    const { innerWidth: width, innerHeight: height } = window;
-    const x = (mousePosition.x - width / 2) / width;
-    const y = (mousePosition.y - height / 2) / height;
+  return (
+    <div
+      ref={ref}
+      style={{
+        transform: `translate(${position.x}px, ${position.y}px)`,
+        transition: 'transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
-    return `perspective(1000px) rotateY(${x * factor}deg) rotateX(${-y * factor}deg)`;
-  };
-
+export default function HeroSection() {
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center px-4 overflow-hidden">
       <div className="absolute inset-0 particles z-0" />
@@ -48,18 +79,10 @@ export default function HeroSection() {
           </Button>
         </div>
         <div className="flex items-center justify-center">
-          <div className="flex text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)]">
-            {'NEW'.split('').map((letter, index) => (
-              <div
-                key={index}
-                style={{
-                  transform: calculateTransform(15 + index * 7),
-                  transition: 'transform 0.1s ease-out',
-                }}
-              >
-                {letter}
-              </div>
-            ))}
+          <div className="flex text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.3)]">
+            <Letter>N</Letter>
+            <Letter>E</Letter>
+            <Letter>W</Letter>
           </div>
         </div>
       </div>
