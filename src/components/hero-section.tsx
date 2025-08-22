@@ -25,7 +25,7 @@ export default function HeroSection() {
             <div>N</div>
             <div className="flex flex-col items-center justify-center mx-2 md:mx-4 space-y-4 md:space-y-6 h-[1em]">
               <div className="w-[0.5em] h-2 md:h-3 bg-primary rounded-full"></div>
-              <div className="w-[0.35em] h-2 md:h-3 bg-primary rounded-full"></div>
+              <div className="w-[0.5em] h-2 md:h-3 bg-primary rounded-full"></div>
               <div className="w-[0.5em] h-2 md:h-3 bg-primary rounded-full"></div>
             </div>
             <div>W</div>
