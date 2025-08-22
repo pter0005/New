@@ -36,7 +36,6 @@ export default function HeroSection() {
     <section id="home" className="relative h-screen w-full flex items-center justify-center px-4 overflow-hidden">
       <div className="absolute inset-0 particles z-0" />
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-10">
-        {/* Coluna da Esquerda: Texto e Botão */}
         <div className="text-left animate-fadeIn">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
             A <span className="text-primary">tecnologia certa</span>, é a que se adapta com você.
@@ -48,8 +47,6 @@ export default function HeroSection() {
             <Link href="#contact">Fale com a NEW</Link>
           </Button>
         </div>
-
-        {/* Coluna da Direita: Logo 3D */}
         <div className="flex items-center justify-center">
           <div
             style={{

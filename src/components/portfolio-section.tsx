@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
-  { name: "Team VEO3", type: "Website Institucional", image: "/images/veo3-cover.png", hint: "ia videos", link: "https://www.teamveo3.com/" },
+  { name: "Team VEO3", type: "Website Institucional", image: "https://placehold.co/800x450.png", hint: "ia videos", link: "https://www.teamveo3.com/" },
   { name: "Neon Store", type: "Loja Virtual", image: "https://placehold.co/800x450.png", hint: "neon shop", link: "#" },
   { name: "Data Viz", type: "Dashboard Analítico", image: "https://placehold.co/800x450.png", hint: "data dashboard", link: "#" },
 ];
