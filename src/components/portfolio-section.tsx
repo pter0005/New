@@ -21,7 +21,7 @@ const projects = [
   {
     name: "Team VEO3",
     type: "Website Institucional",
-    image: "https://storage.googleapis.com/aip-dev-02-04-24-00/public/imgs/1722881335967.png",
+    image: "https://placehold.co/1920x1200.png",
     hint: "ia videos",
     link: "https://www.teamveo3.com/",
     description: "Um site institucional moderno e dinâmico para uma equipe de produção de vídeo especializada em conteúdo gerado por IA. O foco era criar uma estética futurista e destacar seu trabalho inovador com animações e um design arrojado.",
