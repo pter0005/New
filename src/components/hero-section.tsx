@@ -6,8 +6,10 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
     };
@@ -20,7 +22,7 @@ export default function HeroSection() {
   }, []);
 
   const calculateTransform = (factor: number) => {
-    if (typeof window === 'undefined') {
+    if (!isMounted) {
       return 'none';
     }
     const { innerWidth: width, innerHeight: height } = window;
@@ -54,7 +56,7 @@ export default function HeroSection() {
               transition: 'transform 0.1s ease-out',
             }}
           >
-            <h1 className="text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_15px_hsl(var(--primary))]">
+            <h1 className="text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_10px_hsl(var(--primary))]">
               NEW
             </h1>
           </div>
