@@ -26,11 +26,11 @@ const Letter = ({ children }: { children: React.ReactNode }) => {
         const deltaY = event.clientY - centerY;
 
         const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-        const repulsionRadius = 150; // Raio de interação
+        const repulsionRadius = 150; 
 
         if (distance < repulsionRadius) {
           const force = 1 - distance / repulsionRadius;
-          const moveX = -(deltaX / distance) * force * 40; // Força do movimento
+          const moveX = -(deltaX / distance) * force * 40;
           const moveY = -(deltaY / distance) * force * 40;
           setPosition({ x: moveX, y: moveY });
         } else {
@@ -64,10 +64,10 @@ const Letter = ({ children }: { children: React.ReactNode }) => {
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative h-screen w-full flex items-center justify-center px-4 overflow-hidden">
+    <section id="home" className="relative h-screen w-full flex items-center justify-center p-4 overflow-hidden">
       <div className="absolute inset-0 particles z-0" />
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-10">
-        <div className="text-left animate-fadeIn">
+        <div className="text-center md:text-left animate-fadeIn">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
             A <span className="text-primary">tecnologia certa</span>, é a que se adapta com você.
           </h1>
@@ -79,7 +79,7 @@ export default function HeroSection() {
           </Button>
         </div>
         <div className="flex items-center justify-center">
-          <div className="flex text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.3)]">
+          <div className="flex text-7xl sm:text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.3)]">
             <Letter>N</Letter>
             <Letter>E</Letter>
             <Letter>W</Letter>
