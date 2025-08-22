@@ -83,21 +83,33 @@
   .glassmorphism {
     @apply bg-background/60 backdrop-blur-lg border border-border/50;
   }
-  .bg-gradient-animation {
-    background: linear-gradient(-45deg, hsl(var(--primary)), #000000, hsl(var(--secondary)), hsl(var(--primary)));
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+
+  .blackhole-vortex {
+    background: conic-gradient(from 180deg at 50% 50%, #000000 0deg, hsl(var(--primary) / 0.5) 60deg, #000000 120deg, hsl(var(--secondary) / 0.4) 180deg, #000000 240deg, hsl(var(--primary) / 0.5) 300deg, #000000 360deg);
+    animation: blackhole-vortex 20s linear infinite;
+    filter: blur(40px);
+    transform: scale(1.5);
   }
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
+  .twinkling-stars {
+    background-image: radial-gradient(hsl(var(--primary)/0.5) 0.5px, transparent 0.5px),
+                      radial-gradient(hsl(var(--primary)/0.5) 0.5px, transparent 0.5px);
+    background-size: 50px 50px, 80px 80px;
+    background-position: 0 0, 40px 40px;
+    animation: twinkling-stars 4s infinite ease-in-out;
+  }
+
+  @keyframes blackhole-vortex {
+    from {
+      transform: scale(1.5) rotate(0deg);
     }
-    50% {
-      background-position: 100% 50%;
+    to {
+      transform: scale(1.5) rotate(360deg);
     }
-    100% {
-      background-position: 0% 50%;
-    }
+  }
+
+  @keyframes twinkling-stars {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.8; }
   }
 }
