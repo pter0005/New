@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
-  <Link href={href} className="text-sm font-medium text-primary/80 hover:text-primary transition-colors hover:text-glow">
+  <Link href={href} className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
     {children}
   </Link>
 );
@@ -12,7 +12,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-3xl font-bold text-primary text-glow">
+            <Link href="/" className="text-2xl font-bold text-foreground">
               NEW
             </Link>
           </div>
@@ -21,6 +21,7 @@ export default function Header() {
             <NavLink href="#method">Método</NavLink>
             <NavLink href="#portfolio">Portfólio</NavLink>
             <NavLink href="#services">Serviços</NavLink>
+            <NavLink href="#faq">FAQ</NavLink>
             <NavLink href="#contact">Contato</NavLink>
           </nav>
         </div>

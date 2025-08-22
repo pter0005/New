@@ -5,16 +5,16 @@ const services = [
   {
     icon: <Code className="h-10 w-10 text-primary" />,
     title: "Criação de Sites Profissionais",
-    description: "Desenvolvemos landing pages, lojas virtuais e cardápios digitais com design futurista e performance de ponta."
+    description: "Desenvolvemos landing pages, lojas virtuais e cardápios digitais com design moderno e performance de ponta."
   },
   {
     icon: <Palette className="h-10 w-10 text-primary" />,
     title: "Identidade Visual",
-    description: "Criamos logos e branding digital que capturam a essência do futuro e posicionam sua marca de forma única no mercado."
+    description: "Criamos logos e branding digital que capturam a essência da sua marca e a posicionam de forma única no mercado."
   },
   {
     icon: <Settings className="h-10 w-10 text-primary" />,
-    title: "Soluções Online Personalizadas",
+    title: "Soluções Personalizadas",
     description: "Construímos sistemas sob medida, integrações complexas e automações para otimizar seus processos e impulsionar seu negócio."
   }
 ];
@@ -24,7 +24,7 @@ export default function ServicesSection() {
     <section id="services" className="py-20 sm:py-32 bg-background/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary">O que oferecemos</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">O que oferecemos</h2>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (

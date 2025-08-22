@@ -1,25 +1,25 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, Zap, Gem, UserCheck } from 'lucide-react';
+import { BadgeCheck, Zap, Gem, UserCheck } from 'lucide-react';
 
 const features = [
   {
-    icon: <CheckCircle className="h-8 w-8 text-primary" />,
-    title: "Sem mensalidade, sem anuidade.",
+    icon: <BadgeCheck className="h-8 w-8 text-primary" />,
+    title: "Pagamento único",
     description: "Pague uma vez e o ativo digital é seu para sempre. Simples e transparente."
   },
   {
     icon: <Zap className="h-8 w-8 text-primary" />,
-    title: "Flexibilidade total.",
+    title: "Flexibilidade total",
     description: "Seu projeto evolui com seu negócio. Adicione funcionalidades quando precisar."
   },
   {
     icon: <Gem className="h-8 w-8 text-primary" />,
-    title: "Design premium.",
-    description: "Criamos experiências únicas e futuristas, sem usar templates básicos."
+    title: "Design premium",
+    description: "Criamos experiências únicas e modernas, sem usar templates prontos."
   },
   {
     icon: <UserCheck className="h-8 w-8 text-primary" />,
-    title: "Suporte direto.",
+    title: "Suporte direto",
     description: "Fale diretamente com quem desenvolve seu projeto. Sem burocracia, sem tickets."
   }
 ];
@@ -29,7 +29,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 sm:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary glitch">Quem somos</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">Quem somos</h2>
           <p className="mt-6 max-w-3xl mx-auto text-lg text-foreground/80">
             A NEW nasceu para quebrar o padrão do mercado. Acreditamos que a tecnologia deve ser uma aliada, não uma despesa recorrente. Construímos ativos digitais que pertencem a você, com design de ponta e a flexibilidade que seu negócio precisa para crescer sem limites.
           </p>

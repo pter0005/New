@@ -8,17 +8,16 @@ export default function SplashScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowText(true);
-    }, 1500);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background transition-opacity duration-500 ease-out">
       <div className="relative animate-fadeIn">
-        <h1 className="text-7xl md:text-9xl font-black text-primary neon-glow">
+        <h1 className="text-7xl md:text-9xl font-extrabold text-foreground">
           NEW
         </h1>
-        <div className="absolute inset-0 text-7xl md:text-9xl font-black text-primary neon-glow blur-xl">NEW</div>
       </div>
       {showText && (
         <p className="mt-4 text-center text-lg md:text-xl text-primary font-light tracking-widest border-r-2 border-primary typing-effect">
