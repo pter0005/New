@@ -18,22 +18,22 @@ export default function Home() {
     <div className="relative min-h-screen bg-background overflow-x-hidden">
       <main>
         <HeroSection />
-        <ScrollAnimator animationType="zoomInFadeIn">
+        <ScrollAnimator animationType="fadeInUp">
           <AboutSection />
         </ScrollAnimator>
-        <ScrollAnimator animationType="zoomInFadeIn">
+        <ScrollAnimator animationType="fadeInUp">
           <MethodSection />
         </ScrollAnimator>
-        <ScrollAnimator animationType="zoomInFadeIn">
+        <ScrollAnimator animationType="fadeInUp">
           <PortfolioSection />
         </ScrollAnimator>
-        <ScrollAnimator animationType="zoomInFadeIn">
+        <ScrollAnimator animationType="fadeInUp">
           <ServicesSection />
         </ScrollAnimator>
-        <ScrollAnimator animationType="zoomInFadeIn">
+        <ScrollAnimator animationType="fadeInUp">
           <FaqSection />
         </ScrollAnimator>
-        <ScrollAnimator animationType="zoomInFadeIn">
+        <ScrollAnimator animationType="fadeInUp">
           <ContactSection />
         </ScrollAnimator>
       </main>

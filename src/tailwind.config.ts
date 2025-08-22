@@ -99,7 +99,7 @@ export default {
         zoomInFadeIn: {
           '0%': {
             opacity: '0',
-            transform: 'scale(0.5)',
+            transform: 'scale(0.9)',
           },
           '100%': {
             opacity: '1',
