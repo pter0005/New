@@ -8,22 +8,20 @@ import * as THREE from 'three';
 function Stars(props: any) {
   const ref = useRef<THREE.Points>(null!);
   const [sphere] = useMemo(() => {
-    // A utility function from three.js to generate random points in a sphere
-    const an = new THREE.SphereGeometry(1, 48, 48);
-    const av = new Float32Array(5000 * 3);
-    for (let i = 0; i < 5000; i++) {
-        const i3 = i*3;
+    const count = 5000;
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+        const i3 = i * 3;
         const p = new THREE.Vector3().setFromSphericalCoords(
             1.5 + Math.random() * 0.5,
-            Math.acos(1 - 2*Math.random()),
+            Math.acos(1 - 2 * Math.random()),
             Math.random() * 2 * Math.PI
         );
-        av[i3] = p.x;
-        av[i3+1] = p.y;
-        av[i3+2] = p.z;
+        positions[i3] = p.x;
+        positions[i3+1] = p.y;
+        positions[i3+2] = p.z;
     }
-    return [av];
-
+    return [positions];
   }, []);
 
   useFrame((state, delta) => {
