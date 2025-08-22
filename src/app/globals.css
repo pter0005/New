@@ -100,31 +100,4 @@
       background-position: 0% 50%;
     }
   }
-
-  .particles-far {
-    background-image: radial-gradient(hsl(var(--primary) / 0.15) 1px, transparent 1px);
-    background-size: 60px 60px;
-    animation: particle-animation 180s linear infinite;
-  }
-
-  .particles-mid {
-    background-image: radial-gradient(hsl(var(--primary) / 0.2) 1.5px, transparent 1.5px);
-    background-size: 50px 50px;
-    animation: particle-animation 120s linear infinite;
-  }
-  
-  .particles-near {
-    background-image: radial-gradient(hsl(var(--primary) / 0.25) 2px, transparent 2px);
-    background-size: 40px 40px;
-    animation: particle-animation 60s linear infinite;
-  }
-
-  @keyframes particle-animation {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: -1000px 500px;
-    }
-  }
 }
