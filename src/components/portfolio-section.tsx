@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
-  { name: "Team VEO3", type: "Website Institucional", image: "https://placehold.co/1600x900.png", hint: "ia videos", link: "https://www.teamveo3.com/" },
-  { name: "Neon Store", type: "Loja Virtual", image: "https://placehold.co/1600x900.png", hint: "neon shop", link: "#" },
-  { name: "Data Viz", type: "Dashboard Analítico", image: "https://placehold.co/1600x900.png", hint: "data dashboard", link: "#" },
+  { name: "Team VEO3", type: "Website Institucional", image: "https://placehold.co/1920x1080.png", hint: "ia videos", link: "https://www.teamveo3.com/" },
+  { name: "Neon Store", type: "Loja Virtual", image: "https://placehold.co/1920x1080.png", hint: "neon shop", link: "#" },
+  { name: "Data Viz", type: "Dashboard Analítico", image: "https://placehold.co/1920x1080.png", hint: "data dashboard", link: "#" },
 ];
 
 export default function PortfolioSection() {
@@ -25,8 +25,8 @@ export default function PortfolioSection() {
                 <Image 
                   src={project.image}
                   alt={`Mockup do projeto ${project.name}`}
-                  width={1600}
-                  height={900}
+                  width={1920}
+                  height={1080}
                   data-ai-hint={project.hint}
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
                 />
