@@ -18,14 +18,12 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <div className="relative z-10 bg-background">
-          <AboutSection />
-          <MethodSection />
-          <PortfolioSection />
-          <ServicesSection />
-          <FaqSection />
-          <ContactSection />
-        </div>
+        <AboutSection />
+        <MethodSection />
+        <PortfolioSection />
+        <ServicesSection />
+        <FaqSection />
+        <ContactSection />
       </main>
       <Footer />
       <WhatsAppFAB />
