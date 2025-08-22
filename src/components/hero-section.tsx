@@ -7,27 +7,44 @@ import { useState, useEffect } from 'react';
 export default function HeroSection() {
   const [text, setText] = useState('');
   const fullText = "A tecnologia certa, é a que se adapta com você.";
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
-    let index = 0;
-    setText(''); // Garante que o texto reinicie a animação
-    const typingInterval = setInterval(() => {
-      if (index < fullText.length) {
-        setText((prev) => prev + fullText.charAt(index));
-        index++;
-      } else {
-        clearInterval(typingInterval);
-        // Faz o cursor piscar no final
-        const cursorInterval = setInterval(() => {
-          setShowCursor(prev => !prev);
-        }, 500);
-        return () => clearInterval(cursorInterval);
-      }
-    }, 75); // Velocidade da digitação
+    const handleTyping = () => {
+      const i = loopNum % 1; // Since we have only one text
+      const currentText = fullText;
 
-    return () => clearInterval(typingInterval);
-  }, [fullText]);
+      if (isDeleting) {
+        setText(currentText.substring(0, text.length - 1));
+        setTypingSpeed(75);
+      } else {
+        setText(currentText.substring(0, text.length + 1));
+        setTypingSpeed(150);
+      }
+
+      if (!isDeleting && text === currentText) {
+        // Pause at the end
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && text === '') {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+      }
+    };
+
+    const typingTimeout = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(typingTimeout);
+  }, [text, isDeleting, loopNum, typingSpeed, fullText]);
+
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+    return () => clearInterval(cursorInterval);
+  }, []);
+
 
   return (
     <section id="home" className="h-screen w-full flex items-center justify-center text-center">
