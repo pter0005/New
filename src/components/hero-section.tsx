@@ -55,7 +55,7 @@ export default function HeroSection() {
       </div>
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-center h-full text-left">
-        <div className="max-w-2xl" style={parallaxStyle(20)}>
+        <div className="max-w-2xl">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground drop-shadow-lg">
             Transformamos ideias em ativos digitais.
           </h1>
