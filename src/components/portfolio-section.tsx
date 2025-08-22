@@ -62,10 +62,10 @@ export default function PortfolioSection() {
           </p>
         </div>
         <Dialog>
-          <div className="mt-16 grid grid-cols-1 gap-12 md:gap-16">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <DialogTrigger key={index} asChild onClick={() => setSelectedProject(project)}>
-                <Card className="group overflow-hidden relative glassmorphism border-border/50 hover:border-primary/80 transition-all duration-500 hover:shadow-[0_0_25px_hsl(var(--primary)_/_0.4)] hover:-translate-y-2 cursor-pointer w-full max-w-5xl mx-auto">
+                <Card className="group overflow-hidden relative glassmorphism border-border/50 hover:border-primary/80 transition-all duration-500 hover:shadow-[0_0_25px_hsl(var(--primary)_/_0.4)] hover:-translate-y-2 cursor-pointer w-full mx-auto">
                   <Image
                     src={project.image}
                     alt={`Mockup do projeto ${project.name}`}
