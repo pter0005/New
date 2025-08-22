@@ -1,11 +1,32 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
+import React, { useRef, useEffect } from 'react';
 
 export default function AboutSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        containerRef.current.style.setProperty('--mouse-x', `${x}px`);
+        containerRef.current.style.setProperty('--mouse-y', `${y}px`);
+      }
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <section id="about" className="py-20 sm:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">SOBRE A NEW</h2>
+        <div ref={containerRef} className="relative text-center overflow-hidden rounded-lg">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground interactive-glow py-4">SOBRE A NEW</h2>
           <p className="mt-4 max-w-3xl mx-auto text-base md:text-lg text-foreground/80">
             Nascemos para transformar ideias em ativos digitais de verdade.
           </p>
