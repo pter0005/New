@@ -1,66 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { Button } from './ui/button';
 import Link from 'next/link';
-
-const Letter = ({ children }: { children: React.ReactNode }) => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const ref = useRef<HTMLDivElement>(null);
-  const animationFrameId = useRef<number>();
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      if (animationFrameId.current) {
-        cancelAnimationFrame(animationFrameId.current);
-      }
-
-      animationFrameId.current = requestAnimationFrame(() => {
-        if (!ref.current) return;
-
-        const rect = ref.current.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-
-        const deltaX = event.clientX - centerX;
-        const deltaY = event.clientY - centerY;
-
-        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-        const repulsionRadius = 150; 
-
-        if (distance < repulsionRadius) {
-          const force = 1 - distance / repulsionRadius;
-          const moveX = -(deltaX / distance) * force * 40;
-          const moveY = -(deltaY / distance) * force * 40;
-          setPosition({ x: moveX, y: moveY });
-        } else {
-          setPosition({ x: 0, y: 0 });
-        }
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      if (animationFrameId.current) {
-        cancelAnimationFrame(animationFrameId.current);
-      }
-    };
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        transform: `translate(${position.x}px, ${position.y}px)`,
-        transition: 'transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-      }}
-    >
-      {children}
-    </div>
-  );
-};
 
 export default function HeroSection() {
   return (
@@ -79,10 +21,14 @@ export default function HeroSection() {
           </Button>
         </div>
         <div className="flex items-center justify-center">
-          <div className="flex text-7xl sm:text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.3)]">
-            <Letter>N</Letter>
-            <Letter>E</Letter>
-            <Letter>W</Letter>
+          <div className="flex items-center text-7xl sm:text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.3)]">
+            <div>N</div>
+            <div className="flex flex-col items-center justify-center mx-2 md:mx-4 space-y-4 md:space-y-6 h-[1em]">
+              <div className="w-[0.5em] h-2 md:h-3 bg-primary rounded-full"></div>
+              <div className="w-[0.5em] h-2 md:h-3 bg-primary rounded-full"></div>
+              <div className="w-[0.5em] h-2 md:h-3 bg-primary rounded-full"></div>
+            </div>
+            <div>W</div>
           </div>
         </div>
       </div>
