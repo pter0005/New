@@ -1,10 +1,10 @@
 "use client";
 
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -16,22 +16,29 @@ export default function HeroSection() {
       setMousePosition({ x: event.clientX, y: event.clientY });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
     };
   }, []);
 
   const parallaxStyle = (factor: number) => {
-    if (!isClient) {
+    if (!isClient || typeof window === 'undefined') {
       return {
         transition: 'transform 0.2s ease-out',
       };
     }
     const { innerWidth, innerHeight } = window;
+    const x = (mousePosition.x - innerWidth / 2) / (innerWidth / 2);
+    const y = (mousePosition.y - innerHeight / 2) / (innerHeight / 2);
+    
     return {
-      transform: `translate(${mousePosition.x / (innerWidth / 2) * factor}px, ${mousePosition.y / (innerHeight / 2) * factor}px)`,
+      transform: `translateX(${x * factor}px) translateY(${y * factor}px)`,
       transition: 'transform 0.2s ease-out',
     };
   };
@@ -39,7 +46,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center text-center px-4 overflow-hidden">
       <div 
-        className="absolute inset-0 z-0 bg-black bg-cover bg-center"
+        className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ 
           ...parallaxStyle(-15),
           backgroundImage: "url('https://placehold.co/1920x1080.png')",
@@ -47,7 +54,7 @@ export default function HeroSection() {
         }}
         data-ai-hint="moon landscape"
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
       </div>
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-center h-full text-left">
@@ -65,14 +72,15 @@ export default function HeroSection() {
         
         <div 
           className="absolute inset-0 flex items-center justify-center pointer-events-none"
-          style={parallaxStyle(10)}
+          style={parallaxStyle(20)}
         >
           <Image
             src="/new-logo.png"
             alt="NEW Logo"
             width={500}
             height={200}
-            className="w-auto h-auto max-w-[50vw] select-none"
+            className="w-auto h-auto max-w-[50vw] select-none opacity-80"
+            priority
           />
         </div>
 
@@ -82,7 +90,6 @@ export default function HeroSection() {
                 <span className="sr-only">Rolar para baixo</span>
             </a>
         </div>
-
       </div>
     </section>
   );
