@@ -10,12 +10,11 @@ import FaqSection from '@/components/faq-section';
 import ContactSection from '@/components/contact-section';
 import WhatsAppFAB from '@/components/whatsapp-fab';
 import Footer from '@/components/footer';
-import Header from '@/components/header';
+import DockNav from '@/components/dock-nav';
 
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-background overflow-x-hidden">
-      <Header />
       <main>
         <HeroSection />
         <AboutSection />
@@ -27,6 +26,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppFAB />
+      <DockNav />
     </div>
   );
 }
