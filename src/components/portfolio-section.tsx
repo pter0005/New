@@ -62,21 +62,21 @@ export default function PortfolioSection() {
           </p>
         </div>
         <Dialog>
-          <div className="mt-16 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mt-16 grid grid-cols-1 gap-12 md:gap-16">
             {projects.map((project, index) => (
               <DialogTrigger key={index} asChild onClick={() => setSelectedProject(project)}>
-                <Card className="group overflow-hidden relative glassmorphism border-border/50 hover:border-primary/80 transition-all duration-500 hover:shadow-[0_0_25px_hsl(var(--primary)_/_0.4)] hover:-translate-y-2 cursor-pointer">
+                <Card className="group overflow-hidden relative glassmorphism border-border/50 hover:border-primary/80 transition-all duration-500 hover:shadow-[0_0_25px_hsl(var(--primary)_/_0.4)] hover:-translate-y-2 cursor-pointer w-full max-w-5xl mx-auto">
                   <Image
                     src={project.image}
                     alt={`Mockup do projeto ${project.name}`}
                     width={1920}
                     height={1200}
                     data-ai-hint={project.hint}
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-primary-foreground drop-shadow-[0_0_8px_hsl(var(--primary))]">{project.name}</h3>
+                  <div className="absolute bottom-0 left-0 p-6 md:p-8">
+                    <h3 className="text-xl md:text-3xl font-bold text-primary-foreground drop-shadow-[0_0_8px_hsl(var(--primary))]">{project.name}</h3>
                     <p className="text-sm md:text-base text-primary-foreground/80">{project.type}</p>
                   </div>
                 </Card>
