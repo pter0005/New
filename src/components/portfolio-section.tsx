@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
-  { name: "Team VEO3", type: "Website Institucional", image: "https://placehold.co/800x400.png", hint: "ia videos", link: "https://www.teamveo3.com/" },
-  { name: "Neon Store", type: "Loja Virtual", image: "https://placehold.co/800x400.png", hint: "neon shop", link: "#" },
-  { name: "Data Viz", type: "Dashboard Analítico", image: "https://placehold.co/800x400.png", hint: "data dashboard", link: "#" },
+  { name: "Team VEO3", type: "Website Institucional", image: "https://placehold.co/900x900.png", hint: "ia videos", link: "https://www.teamveo3.com/" },
+  { name: "Neon Store", type: "Loja Virtual", image: "https://placehold.co/900x900.png", hint: "neon shop", link: "#" },
+  { name: "Data Viz", type: "Dashboard Analítico", image: "https://placehold.co/900x900.png", hint: "data dashboard", link: "#" },
 ];
 
 export default function PortfolioSection() {
@@ -15,15 +15,15 @@ export default function PortfolioSection() {
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">Projetos que já transformamos</h2>
         </div>
-        <div className="mt-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <Link key={index} href={project.link} target="_blank" rel="noopener noreferrer">
               <Card className="group overflow-hidden relative glassmorphism border-border/50 hover:border-primary/80 transition-all duration-500 hover:shadow-[0_0_25px_hsl(var(--primary)_/_0.4)]" style={{ animationDelay: `${index * 150}ms` }}>
                 <Image 
                   src={project.image}
                   alt={`Mockup do projeto ${project.name}`}
-                  width={800}
-                  height={400}
+                  width={900}
+                  height={900}
                   data-ai-hint={project.hint}
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
                 />
