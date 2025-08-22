@@ -21,7 +21,7 @@ const projects = [
   {
     name: "Team VEO3",
     type: "Website Institucional",
-    image: "https://i.imgur.com/Q2x8x2a.png",
+    image: "https://i.imgur.com/Sft4v1o.png",
     hint: "ia videos",
     link: "https://www.teamveo3.com/",
     description: "Um site institucional moderno e dinâmico para uma equipe de produção de vídeo especializada em conteúdo gerado por IA. O foco era criar uma estética futurista e destacar seu trabalho inovador com animações e um design arrojado.",
