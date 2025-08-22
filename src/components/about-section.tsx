@@ -3,22 +3,22 @@ import { BadgeCheck, Zap, Gem, UserCheck } from 'lucide-react';
 
 const features = [
   {
-    icon: <BadgeCheck className="h-8 w-8 text-primary" />,
+    icon: <BadgeCheck className="h-8 w-8 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />,
     title: "Pagamento único",
     description: "Pague uma vez e o ativo digital é seu para sempre. Simples e transparente."
   },
   {
-    icon: <Zap className="h-8 w-8 text-primary" />,
+    icon: <Zap className="h-8 w-8 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />,
     title: "Flexibilidade total",
     description: "Seu projeto evolui com seu negócio. Adicione funcionalidades quando precisar."
   },
   {
-    icon: <Gem className="h-8 w-8 text-primary" />,
+    icon: <Gem className="h-8 w-8 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />,
     title: "Design premium",
     description: "Criamos experiências únicas e modernas, sem usar templates prontos."
   },
   {
-    icon: <UserCheck className="h-8 w-8 text-primary" />,
+    icon: <UserCheck className="h-8 w-8 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />,
     title: "Suporte direto",
     description: "Fale diretamente com quem desenvolve seu projeto. Sem burocracia, sem tickets."
   }
@@ -36,9 +36,9 @@ export default function AboutSection() {
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="glassmorphism p-6 text-center transition-all duration-300 hover:border-primary/80 hover:-translate-y-2">
+            <Card key={index} className="glassmorphism p-6 text-center transition-all duration-300 hover:border-primary/80 hover:-translate-y-2 hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.3)]">
               <CardContent className="flex flex-col items-center justify-start gap-4 h-full">
-                <div className="p-3 bg-background rounded-full border border-primary/50">
+                <div className="p-3 bg-background/50 rounded-full border border-primary/50">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-bold text-foreground">{feature.title}</h3>

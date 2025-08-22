@@ -3,17 +3,17 @@ import { Code, Palette, Settings } from 'lucide-react';
 
 const services = [
   {
-    icon: <Code className="h-10 w-10 text-primary" />,
+    icon: <Code className="h-10 w-10 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />,
     title: "Criação de Sites Profissionais",
     description: "Desenvolvemos landing pages, lojas virtuais e cardápios digitais com design moderno e performance de ponta."
   },
   {
-    icon: <Palette className="h-10 w-10 text-primary" />,
+    icon: <Palette className="h-10 w-10 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />,
     title: "Identidade Visual",
     description: "Criamos logos e branding digital que capturam a essência da sua marca e a posicionam de forma única no mercado."
   },
   {
-    icon: <Settings className="h-10 w-10 text-primary" />,
+    icon: <Settings className="h-10 w-10 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />,
     title: "Soluções Personalizadas",
     description: "Construímos sistemas sob medida, integrações complexas e automações para otimizar seus processos e impulsionar seu negócio."
   }
@@ -28,7 +28,7 @@ export default function ServicesSection() {
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="glassmorphism p-6 text-left transition-all duration-300 hover:-translate-y-2 hover:border-primary">
+            <Card key={index} className="glassmorphism p-6 text-left transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.3)]">
               <CardHeader>
                 {service.icon}
               </CardHeader>

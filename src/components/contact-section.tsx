@@ -44,16 +44,16 @@ export default function ContactSection() {
                 required
               />
             </div>
-            <Button type="submit" size="lg" variant="outline" className="w-full bg-transparent border-primary text-primary text-lg font-bold uppercase tracking-wider transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105">
+            <Button type="submit" size="lg" variant="outline" className="w-full bg-transparent border-primary text-primary text-lg font-bold uppercase tracking-wider transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105 hover:drop-shadow-[0_0_10px_hsl(var(--primary))]">
               Enviar
             </Button>
           </form>
           <div className="mt-12 flex justify-center items-center space-x-6">
             <Link href="#" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
-              <Instagram className="h-8 w-8" />
+              <Instagram className="h-8 w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
             </Link>
             <Link href="#" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
-              <Linkedin className="h-8 w-8" />
+              <Linkedin className="h-8 w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
             </Link>
           </div>
         </div>

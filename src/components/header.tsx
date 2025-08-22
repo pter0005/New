@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes';
 import React from 'react';
 
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
-  <Link href={href} className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
+  <Link href={href} className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors hover:drop-shadow-[0_0_5px_hsl(var(--primary))]">
     {children}
   </Link>
 );
@@ -15,7 +15,6 @@ const NavLink = ({ href, children }: { href: string, children: React.ReactNode }
 export default function Header() {
   const { theme, setTheme } = useTheme();
   
-  // Evita o piscar da UI garantindo que o componente só renderize no cliente
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => setMounted(true), []);
 
@@ -28,7 +27,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-primary mr-4">
+            <Link href="/" className="text-2xl font-bold text-primary mr-4 transition-all hover:drop-shadow-[0_0_10px_hsl(var(--primary))]">
               NEW
             </Link>
           </div>
@@ -42,7 +41,7 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <Button asChild variant="outline" className="hidden sm:inline-flex border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Button asChild variant="outline" className="hidden sm:inline-flex border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:drop-shadow-[0_0_8px_hsl(var(--primary))]">
                 <Link href="#contact">Fale com a NEW</Link>
             </Button>
             {mounted && (
