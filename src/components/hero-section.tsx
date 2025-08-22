@@ -48,15 +48,18 @@ export default function HeroSection() {
           </Button>
         </div>
         <div className="flex items-center justify-center">
-          <div
-            style={{
-              transform: calculateTransform(20),
-              transition: 'transform 0.1s ease-out',
-            }}
-          >
-            <h1 className="text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.8)]">
-              NEW
-            </h1>
+          <div className="flex text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)]">
+            {'NEW'.split('').map((letter, index) => (
+              <div
+                key={index}
+                style={{
+                  transform: calculateTransform(15 + index * 7),
+                  transition: 'transform 0.1s ease-out',
+                }}
+              >
+                {letter}
+              </div>
+            ))}
           </div>
         </div>
       </div>
