@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -28,8 +29,9 @@ export default function HeroSection() {
         transition: 'transform 0.2s ease-out',
       };
     }
+    const { innerWidth, innerHeight } = window;
     return {
-      transform: `translate(${mousePosition.x / (window.innerWidth / 2) * factor}px, ${mousePosition.y / (window.innerHeight / 2) * factor}px)`,
+      transform: `translate(${mousePosition.x / (innerWidth / 2) * factor}px, ${mousePosition.y / (innerHeight / 2) * factor}px)`,
       transition: 'transform 0.2s ease-out',
     };
   };
@@ -65,9 +67,13 @@ export default function HeroSection() {
           className="absolute inset-0 flex items-center justify-center pointer-events-none"
           style={parallaxStyle(10)}
         >
-            <h2 className="text-[20vw] font-black text-white/10 select-none">
-                NEW
-            </h2>
+          <Image
+            src="/new-logo.png"
+            alt="NEW Logo"
+            width={500}
+            height={200}
+            className="w-auto h-auto max-w-[50vw] select-none"
+          />
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center text-foreground/60 animate-bounce">
