@@ -1,56 +1,19 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
 export default function HeroSection() {
-  const [isClient, setIsClient] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    setIsClient(true);
-    const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  const parallaxStyle = (factor: number) => {
-    if (!isClient) {
-      return {};
-    }
-    const x = (mousePosition.x - window.innerWidth / 2) / (window.innerWidth / 2);
-    const y = (mousePosition.y - window.innerHeight / 2) / (window.innerHeight / 2);
-    
-    return {
-      transform: `translateX(${x * factor}px) translateY(${y * factor}px)`,
-      transition: 'transform 0.1s ease-out',
-    };
-  };
-
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center text-center px-4 overflow-hidden">
       <div 
-        className="absolute inset-0 z-0"
-        style={parallaxStyle(15)}
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/new-logo.png')",
+        }}
       >
-        <Image
-          src="/new-logo.png"
-          alt="NEW Logo background"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
-          priority
-          data-ai-hint="logo neon"
-        />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
       </div>
       
