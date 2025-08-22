@@ -3,7 +3,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function HeroSection() {
   return (
@@ -11,19 +10,14 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="flex justify-center md:justify-start">
-            <Image
-              src="/new-logo.png"
-              alt="NEW Logo"
-              width={500}
-              height={500}
-              className="object-contain"
-              priority
-            />
+            <h1 className="text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_15px_hsl(var(--primary))]">
+              NEW
+            </h1>
           </div>
           <div className="text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground drop-shadow-lg">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground drop-shadow-lg">
               Transformamos ideias em ativos digitais.
-            </h1>
+            </h2>
             <p className="mt-4 text-lg md:text-xl text-foreground/80">
               A tecnologia certa é a que se adapta com você.
             </p>
