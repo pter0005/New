@@ -1,15 +1,37 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from './ui/button';
 import Link from 'next/link';
 
 export default function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const { clientX, clientY } = e;
+        const { offsetWidth, offsetHeight } = containerRef.current;
+        const xPos = (clientX / offsetWidth) * 100;
+        const yPos = (clientY / offsetHeight) * 100;
+        containerRef.current.style.setProperty('--mouse-x', `${xPos}%`);
+        containerRef.current.style.setProperty('--mouse-y', `${yPos}%`);
+      }
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center p-4 overflow-hidden">
       <div className="absolute inset-0 z-0 galaxy-background" />
-
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-10">
+      <div
+        ref={containerRef}
+        className="absolute inset-0 z-10 interactive-glow"
+      />
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-20">
         <div className="text-center md:text-left animate-fadeInUp">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
             A <span className="text-primary">tecnologia certa</span>, é a que se adapta com você.
@@ -35,6 +57,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-20" />
     </section>
   );
 }
