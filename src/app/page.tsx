@@ -10,10 +10,12 @@ import FaqSection from '@/components/faq-section';
 import ContactSection from '@/components/contact-section';
 import WhatsAppFAB from '@/components/whatsapp-fab';
 import Footer from '@/components/footer';
+import Header from '@/components/header';
 
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-background overflow-x-hidden">
+      <Header />
       <main>
         <HeroSection />
         <div className="relative z-10 bg-background">
