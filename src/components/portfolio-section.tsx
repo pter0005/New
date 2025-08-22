@@ -10,7 +10,7 @@ const projects = [
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-20 sm:py-32">
+    <section id="portfolio" className="py-20 sm:py-32 animate-fadeInUp">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">Projetos que já transformamos</h2>
@@ -18,7 +18,7 @@ export default function PortfolioSection() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Link key={index} href={project.link} target="_blank" rel="noopener noreferrer">
-              <Card className="group overflow-hidden relative glassmorphism border-border/50 hover:border-primary/80 transition-all duration-500 animate-fadeInUp hover:shadow-[0_0_25px_hsl(var(--primary)_/_0.4)]" style={{ animationDelay: `${index * 150}ms` }}>
+              <Card className="group overflow-hidden relative glassmorphism border-border/50 hover:border-primary/80 transition-all duration-500 hover:shadow-[0_0_25px_hsl(var(--primary)_/_0.4)]" style={{ animationDelay: `${index * 150}ms` }}>
                 <Image 
                   src={project.image}
                   alt={`Mockup do projeto ${project.name}`}
