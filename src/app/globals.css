@@ -36,32 +36,32 @@
   }
  
   .dark {
-    --background: 0 0% 13%;
+    --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
  
-    --card: 0 0% 13%;
+    --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
  
-    --popover: 0 0% 13%;
+    --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
  
     --primary: 16 100% 50%;
-    --primary-foreground: 0 0% 13%;
+    --primary-foreground: 240 5.9% 10%;
  
-    --secondary: 0 0% 20%;
+    --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
  
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 63.9%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
  
-    --accent: 183 100% 74%;
-    --accent-foreground: 0 0% 13%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
  
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
  
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
     --ring: 16 100% 50%;
   }
 }
@@ -82,5 +82,37 @@
 @layer utilities {
   .glassmorphism {
     @apply bg-background/60 backdrop-blur-lg border border-border/50;
+  }
+  .bg-gradient-animation {
+    background: linear-gradient(-45deg, hsl(var(--primary)), #000000, hsl(var(--secondary)), hsl(var(--primary)));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .particles {
+    background-image: radial-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: particle-animation 60s linear infinite;
+  }
+
+  @keyframes particle-animation {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -1000px 500px;
+    }
   }
 }
