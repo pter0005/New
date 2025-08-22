@@ -6,11 +6,12 @@ import { useState, useEffect } from 'react';
 
 export default function HeroSection() {
   const [text, setText] = useState('');
-  const fullText = "Tecnologia que evolui junto com você.";
+  const fullText = "A tecnologia certa, é a que se adapta com você.";
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
     let index = 0;
+    setText(''); // Garante que o texto reinicie a animação
     const typingInterval = setInterval(() => {
       if (index < fullText.length) {
         setText((prev) => prev + fullText.charAt(index));
@@ -26,7 +27,7 @@ export default function HeroSection() {
     }, 75); // Velocidade da digitação
 
     return () => clearInterval(typingInterval);
-  }, []);
+  }, [fullText]);
 
   return (
     <section id="home" className="h-screen w-full flex items-center justify-center text-center">
