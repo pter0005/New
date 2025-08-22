@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import NewLogo from "./new-logo";
 
 const projects = [
   { name: "Team VEO3", type: "Website Institucional", image: "/images/veo3-cover.png", hint: "ia videos", link: "https://www.teamveo3.com/" },
