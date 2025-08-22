@@ -36,8 +36,8 @@ export default function AboutSection() {
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="glassmorphism p-6 text-center transition-all duration-300 hover:border-primary hover:scale-105">
-              <CardContent className="flex flex-col items-center justify-center gap-4">
+            <Card key={index} className="glassmorphism p-6 text-center transition-all duration-300 hover:border-primary/80 hover:-translate-y-2">
+              <CardContent className="flex flex-col items-center justify-start gap-4 h-full">
                 <div className="p-3 bg-background rounded-full border border-primary/50">
                   {feature.icon}
                 </div>

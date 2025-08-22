@@ -14,7 +14,7 @@ export default function SplashScreen() {
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background transition-opacity duration-500 ease-out">
-      <div className="relative animate-fadeIn">
+      <div className="relative animate-fadeInUp">
         <h1 className="text-7xl md:text-9xl font-extrabold text-foreground">
           NEW
         </h1>

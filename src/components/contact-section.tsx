@@ -24,7 +24,7 @@ export default function ContactSection() {
               <Input
                 type="text"
                 placeholder="Nome"
-                className="bg-slate-900/40 border-primary/20 focus:border-primary focus:ring-primary"
+                className="bg-secondary/40 border-border focus:border-primary focus:ring-primary"
                 required
               />
             </div>
@@ -32,7 +32,7 @@ export default function ContactSection() {
               <Input
                 type="email"
                 placeholder="E-mail"
-                className="bg-slate-900/40 border-primary/20 focus:border-primary focus:ring-primary"
+                className="bg-secondary/40 border-border focus:border-primary focus:ring-primary"
                 required
               />
             </div>
@@ -40,19 +40,19 @@ export default function ContactSection() {
               <Textarea
                 placeholder="Mensagem"
                 rows={5}
-                className="bg-slate-900/40 border-primary/20 focus:border-primary focus:ring-primary"
+                className="bg-secondary/40 border-border focus:border-primary focus:ring-primary"
                 required
               />
             </div>
-            <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground text-lg font-bold uppercase tracking-wider transition-all duration-300 hover:bg-primary/90 hover:scale-105">
+            <Button type="submit" size="lg" variant="outline" className="w-full bg-transparent border-primary text-primary text-lg font-bold uppercase tracking-wider transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105">
               Enviar
             </Button>
           </form>
           <div className="mt-12 flex justify-center items-center space-x-6">
-            <Link href="#" target="_blank" rel="noopener noreferrer" className="text-primary/70 hover:text-primary transition-colors">
+            <Link href="#" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
               <Instagram className="h-8 w-8" />
             </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer" className="text-primary/70 hover:text-primary transition-colors">
+            <Link href="#" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
               <Linkedin className="h-8 w-8" />
             </Link>
           </div>
