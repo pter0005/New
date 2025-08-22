@@ -33,8 +33,8 @@ export default function ServicesSection() {
                 {service.icon}
               </CardHeader>
               <CardContent>
-                <h3 className="text-2xl font-bold text-foreground mb-4">{service.title}</h3>
-                <p className="text-foreground/70">{service.description}</p>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">{service.title}</h3>
+                <p className="text-sm md:text-base text-foreground/70">{service.description}</p>
               </CardContent>
             </Card>
           ))}
