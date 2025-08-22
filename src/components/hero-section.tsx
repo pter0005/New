@@ -7,10 +7,7 @@ import Link from 'next/link';
 export default function HeroSection() {
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center p-4 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 blackhole-vortex" />
-        <div className="absolute inset-0 twinkling-stars" />
-      </div>
+      <div className="absolute inset-0 z-0 galaxy-background" />
 
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-10">
         <div className="text-center md:text-left animate-fadeInUp">

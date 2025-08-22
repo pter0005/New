@@ -4,64 +4,46 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 13%;
-    --card-foreground: 0 0% 98%;
- 
-    --popover: 0 0% 13%;
-    --popover-foreground: 0 0% 98%;
- 
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
     --primary: 16 84% 50%;
-    --primary-foreground: 0 0% 98%;
- 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
- 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
- 
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
     --accent: 183 96% 48%;
-    --accent-foreground: 0 0% 13%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 15.9%;
-    --input: 0 0% 15.9%;
+    --accent-foreground: 224 71.4% 4.1%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
     --ring: 16 84% 50%;
- 
     --radius: 0.5rem;
   }
- 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 98%;
- 
-    --card: 0 0% 13%;
-    --card-foreground: 0 0% 98%;
- 
-    --popover: 0 0% 13%;
-    --popover-foreground: 0 0% 98%;
- 
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
     --primary: 16 84% 50%;
-    --primary-foreground: 0 0% 98%;
- 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
- 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
- 
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
     --accent: 183 96% 48%;
-    --accent-foreground: 0 0% 13%;
- 
+    --accent-foreground: 224 71.4% 4.1%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
- 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
     --ring: 16 84% 50%;
   }
 }
@@ -84,32 +66,31 @@
     @apply bg-background/60 backdrop-blur-lg border border-border/50;
   }
 
-  .blackhole-vortex {
-    background: conic-gradient(from 180deg at 50% 50%, #000000 0deg, hsl(var(--primary) / 0.5) 60deg, #000000 120deg, hsl(var(--secondary) / 0.4) 180deg, #000000 240deg, hsl(var(--primary) / 0.5) 300deg, #000000 360deg);
-    animation: blackhole-vortex 20s linear infinite;
-    filter: blur(40px);
-    transform: scale(1.5);
+  .galaxy-background {
+    background-color: #000;
+    background-image:
+      radial-gradient(ellipse at 20% 20%, hsl(var(--primary) / 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 30%, hsl(var(--accent) / 0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, hsl(var(--primary) / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, transparent 0%, transparent 100%),
+      /* Starfield */
+      radial-gradient(circle at 10% 30%, white 0.5px, transparent 1.5px),
+      radial-gradient(circle at 90% 20%, white 0.5px, transparent 1.5px),
+      radial-gradient(circle at 40% 80%, white 0.5px, transparent 1.5px),
+      radial-gradient(circle at 70% 60%, white 0.5px, transparent 1.5px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 200px 200px, 300px 300px, 150px 150px, 250px 250px;
+    animation: galaxy-nebula 60s linear infinite;
   }
 
-  .twinkling-stars {
-    background-image: radial-gradient(hsl(var(--primary)/0.5) 0.5px, transparent 0.5px),
-                      radial-gradient(hsl(var(--primary)/0.5) 0.5px, transparent 0.5px);
-    background-size: 50px 50px, 80px 80px;
-    background-position: 0 0, 40px 40px;
-    animation: twinkling-stars 4s infinite ease-in-out;
-  }
-
-  @keyframes blackhole-vortex {
-    from {
-      transform: scale(1.5) rotate(0deg);
+  @keyframes galaxy-nebula {
+    0% {
+      background-position: 0% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
     }
-    to {
-      transform: scale(1.5) rotate(360deg);
+    50% {
+      background-position: 100% 50%, -20% 40%, 20% -30%, 0% 0%, 50% 50%, 20% 80%, 90% 10%, 30% 30%;
     }
-  }
-
-  @keyframes twinkling-stars {
-    0%, 100% { opacity: 0.1; }
-    50% { opacity: 0.8; }
+    100% {
+      background-position: 0% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
   }
 }
