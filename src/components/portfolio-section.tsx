@@ -18,7 +18,7 @@ export default function PortfolioSection() {
             Confira alguns dos projetos que tivemos o prazer de desenvolver.
           </p>
         </div>
-        <div className="mt-16 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-16 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Link key={index} href={project.link} target="_blank" rel="noopener noreferrer">
               <Card className="group overflow-hidden relative glassmorphism border-border/50 hover:border-primary/80 transition-all duration-500 hover:shadow-[0_0_25px_hsl(var(--primary)_/_0.4)] hover:-translate-y-2">
