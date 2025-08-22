@@ -28,13 +28,14 @@ export default function ScrollAnimator({ children, className, animationType = 'f
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -48,8 +49,8 @@ export default function ScrollAnimator({ children, className, animationType = 'f
     <div
       ref={ref}
       className={cn(
-        'transition-opacity duration-1000 ease-out',
-        isVisible ? `opacity-100 ${animationClass}` : 'opacity-0 translate-y-5',
+        'opacity-0', // Start with opacity 0
+        isVisible && animationClass, // Apply animation class when visible
         className
       )}
     >

@@ -92,4 +92,12 @@
       background-position: 0% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
     }
   }
+
+  .interactive-glow {
+    background-image: radial-gradient(
+      circle at var(--mouse-x) var(--mouse-y),
+      hsla(var(--primary), 0.15) 0%,
+      transparent 20%
+    );
+  }
 }
