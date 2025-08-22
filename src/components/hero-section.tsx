@@ -7,9 +7,11 @@ import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
 export default function HeroSection() {
+  const [isClient, setIsClient] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    setIsClient(true);
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
     };
@@ -22,8 +24,11 @@ export default function HeroSection() {
   }, []);
 
   const parallaxStyle = (factor: number) => {
-    const x = (mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth / 2 : 0)) / ((typeof window !== 'undefined' ? window.innerWidth / 2 : 0));
-    const y = (mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight / 2 : 0)) / ((typeof window !== 'undefined' ? window.innerHeight / 2 : 0));
+    if (!isClient) {
+      return { transform: 'translateX(0px) translateY(0px)' };
+    }
+    const x = (mousePosition.x - window.innerWidth / 2) / (window.innerWidth / 2);
+    const y = (mousePosition.y - window.innerHeight / 2) / (window.innerHeight / 2);
     
     return {
       transform: `translateX(${x * factor}px) translateY(${y * factor}px)`,
