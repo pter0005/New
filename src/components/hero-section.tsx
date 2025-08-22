@@ -3,24 +3,48 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function HeroSection() {
-  
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    const handleMouseMove = (event: MouseEvent) => {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  const parallaxStyle = (factor: number) => {
+    if (!isClient) {
+      return {
+        transition: 'transform 0.2s ease-out',
+      };
+    }
+    return {
+      transform: `translate(${mousePosition.x / (window.innerWidth / 2) * factor}px, ${mousePosition.y / (window.innerHeight / 2) * factor}px)`,
+      transition: 'transform 0.2s ease-out',
+    };
+  };
+
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center text-center px-4 overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-black">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="w-full h-full object-cover opacity-50"
-          poster="https://placehold.co/1920x1080.png"
-          data-ai-hint="aurora borealis landscape"
-        >
-          <source src="/videos/space-background.mp4" type="video/mp4" />
-        </video>
+      <div 
+        className="absolute inset-0 z-0 bg-black bg-cover bg-center"
+        style={{ 
+          ...parallaxStyle(-15),
+          backgroundImage: "url('https://placehold.co/1920x1080.png')",
+          scale: 1.1,
+        }}
+        data-ai-hint="moon landscape"
+      >
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/50"></div>
       </div>
       
@@ -33,12 +57,21 @@ export default function HeroSection() {
             A tecnologia certa é a que se adapta com você.
           </p>
           <Button asChild size="lg" variant="outline" className="mt-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:drop-shadow-[0_0_8px_hsl(var(--primary))]">
-              <Link href="#contact">Explore nossos projetos</Link>
+              <Link href="#portfolio">Explore nossos projetos</Link>
           </Button>
         </div>
         
+        <div 
+          className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          style={parallaxStyle(10)}
+        >
+            <h2 className="text-[20vw] font-black text-white/10 select-none">
+                NEW
+            </h2>
+        </div>
+
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center text-foreground/60 animate-bounce">
-            <a href="#about" className="mt-4">
+            <a href="#about" aria-label="Rolar para baixo">
                 <ChevronDown className="h-6 w-6" />
                 <span className="sr-only">Rolar para baixo</span>
             </a>
