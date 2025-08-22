@@ -1,14 +1,12 @@
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import NewLogo from "./new-logo";
 
 const projects = [
   { name: "Team VEO3", type: "Website Institucional", image: "/images/veo3-cover.png", hint: "ia videos", link: "https://www.teamveo3.com/" },
-  { name: "Neon Store", type: "Loja Virtual", image: "https://placehold.co/600x400.png", hint: "neon shop", link: "#" },
-  { name: "Data Viz", type: "Dashboard Analítico", image: "https://placehold.co/600x400.png", hint: "data dashboard", link: "#" },
-  { name: "Orion App", type: "Aplicativo Mobile", image: "https://placehold.co/600x400.png", hint: "space app", link: "#" },
-  { name: "Future Foods", type: "Cardápio Digital", image: "https://placehold.co/600x400.png", hint: "future food", link: "#" },
-  { name: "Synth Wave", type: "Portal de Eventos", image: "https://placehold.co/600x400.png", hint: "synthwave music", link: "#" },
+  { name: "Neon Store", type: "Loja Virtual", image: "https://placehold.co/800x450.png", hint: "neon shop", link: "#" },
+  { name: "Data Viz", type: "Dashboard Analítico", image: "https://placehold.co/800x450.png", hint: "data dashboard", link: "#" },
 ];
 
 export default function PortfolioSection() {
@@ -25,8 +23,8 @@ export default function PortfolioSection() {
                 <Image 
                   src={project.image}
                   alt={`Mockup do projeto ${project.name}`}
-                  width={600}
-                  height={400}
+                  width={800}
+                  height={450}
                   data-ai-hint={project.hint}
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
                 />
