@@ -21,19 +21,19 @@ export default function Home() {
         <ScrollAnimator animationType="zoomInFadeIn">
           <AboutSection />
         </ScrollAnimator>
-        <ScrollAnimator>
+        <ScrollAnimator animationType="zoomInFadeIn">
           <MethodSection />
         </ScrollAnimator>
-        <ScrollAnimator>
+        <ScrollAnimator animationType="zoomInFadeIn">
           <PortfolioSection />
         </ScrollAnimator>
-        <ScrollAnimator>
+        <ScrollAnimator animationType="zoomInFadeIn">
           <ServicesSection />
         </ScrollAnimator>
-        <ScrollAnimator>
+        <ScrollAnimator animationType="zoomInFadeIn">
           <FaqSection />
         </ScrollAnimator>
-        <ScrollAnimator>
+        <ScrollAnimator animationType="zoomInFadeIn">
           <ContactSection />
         </ScrollAnimator>
       </main>
