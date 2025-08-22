@@ -25,7 +25,7 @@ export default function HeroSection() {
 
   const parallaxStyle = (factor: number) => {
     if (!isClient) {
-      return { transform: 'translateX(0px) translateY(0px)' };
+      return {};
     }
     const x = (mousePosition.x - window.innerWidth / 2) / (window.innerWidth / 2);
     const y = (mousePosition.y - window.innerHeight / 2) / (window.innerHeight / 2);
@@ -39,15 +39,15 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center text-center px-4 overflow-hidden">
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={parallaxStyle(-15)}
+        className="absolute inset-0 z-0"
+        style={parallaxStyle(15)}
       >
         <Image
           src="/new-logo.png"
-          alt="NEW Logo"
+          alt="NEW Logo background"
           layout="fill"
-          objectFit="contain"
-          className="scale-110"
+          objectFit="cover"
+          className="opacity-50"
           priority
           data-ai-hint="logo neon"
         />
