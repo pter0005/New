@@ -21,7 +21,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 sm:py-32 bg-background/50 animate-fadeInUp">
+    <section id="services" className="py-20 sm:py-32 bg-background/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">O que oferecemos</h2>

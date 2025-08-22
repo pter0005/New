@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 sm:py-32 animate-fadeInUp">
+    <section id="about" className="py-20 sm:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">SOBRE A NEW</h2>
