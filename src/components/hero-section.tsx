@@ -28,14 +28,13 @@ export default function HeroSection() {
   }, []);
 
   const parallaxStyle = (factor: number) => {
-    if (!isClient || typeof window === 'undefined') {
+    if (!isClient) {
       return {
         transition: 'transform 0.2s ease-out',
       };
     }
-    const { innerWidth, innerHeight } = window;
-    const x = (mousePosition.x - innerWidth / 2) / (innerWidth / 2);
-    const y = (mousePosition.y - innerHeight / 2) / (innerHeight / 2);
+    const x = (mousePosition.x - window.innerWidth / 2) / (window.innerWidth / 2);
+    const y = (mousePosition.y - window.innerHeight / 2) / (window.innerHeight / 2);
     
     return {
       transform: `translateX(${x * factor}px) translateY(${y * factor}px)`,
@@ -49,10 +48,12 @@ export default function HeroSection() {
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ 
           ...parallaxStyle(-15),
-          backgroundImage: "url('https://placehold.co/1920x1080.png')",
+          backgroundImage: "url('/new-logo.png')",
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
           scale: 1.1,
         }}
-        data-ai-hint="moon landscape"
+        data-ai-hint="logo neon"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
       </div>
@@ -74,14 +75,7 @@ export default function HeroSection() {
           className="absolute inset-0 flex items-center justify-center pointer-events-none"
           style={parallaxStyle(20)}
         >
-          <Image
-            src="/new-logo.png"
-            alt="NEW Logo"
-            width={500}
-            height={200}
-            className="w-auto h-auto max-w-[50vw] select-none opacity-80"
-            priority
-          />
+          {/* This div is now empty to let the background logo be the focus */}
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center text-foreground/60 animate-bounce">
