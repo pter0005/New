@@ -18,7 +18,7 @@ export default function Home() {
     <div className="relative min-h-screen bg-background overflow-x-hidden">
       <main>
         <HeroSection />
-        <ScrollAnimator>
+        <ScrollAnimator animationType="zoomInFadeIn">
           <AboutSection />
         </ScrollAnimator>
         <ScrollAnimator>
