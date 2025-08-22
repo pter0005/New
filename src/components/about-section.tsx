@@ -1,51 +1,29 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { BadgeCheck, Zap, Gem, UserCheck } from 'lucide-react';
-
-const features = [
-  {
-    icon: <BadgeCheck className="h-8 w-8 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />,
-    title: "Pagamento único",
-    description: "Pague uma vez e o ativo digital é seu para sempre. Simples e transparente."
-  },
-  {
-    icon: <Zap className="h-8 w-8 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />,
-    title: "Flexibilidade total",
-    description: "Seu projeto evolui com seu negócio. Adicione funcionalidades quando precisar."
-  },
-  {
-    icon: <Gem className="h-8 w-8 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />,
-    title: "Design premium",
-    description: "Criamos experiências únicas e modernas, sem usar templates prontos."
-  },
-  {
-    icon: <UserCheck className="h-8 w-8 text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" />,
-    title: "Suporte direto",
-    description: "Fale diretamente com quem desenvolve seu projeto. Sem burocracia, sem tickets."
-  }
-];
 
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 sm:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">Quem somos</h2>
-          <p className="mt-6 max-w-3xl mx-auto text-lg text-foreground/80">
-            A NEW nasceu para quebrar o padrão do mercado. Acreditamos que a tecnologia deve ser uma aliada, não uma despesa recorrente. Construímos ativos digitais que pertencem a você, com design de ponta e a flexibilidade que seu negócio precisa para crescer sem limites.
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">SOBRE A NEW</h2>
         </div>
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <Card key={index} className="glassmorphism p-6 text-center transition-all duration-300 hover:border-primary/80 hover:-translate-y-2 hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.3)]">
-              <CardContent className="flex flex-col items-center justify-start gap-4 h-full">
-                <div className="p-3 bg-background/50 rounded-full border border-primary/50">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold text-foreground">{feature.title}</h3>
-                <p className="text-foreground/70">{feature.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="mt-12 max-w-4xl mx-auto space-y-8">
+          <p className="text-lg text-center text-foreground/80">
+            A NEW nasceu para transformar ideias em ativos digitais de verdade. Somos uma empresa especializada em sites profissionais, identidade visual e soluções online personalizadas, sempre com foco em inovação, performance e design futurista.
+          </p>
+          <Card className="glassmorphism p-8 text-center transition-all duration-300 border-primary/30 hover:border-primary/80 hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.3)]">
+            <CardContent className="p-0">
+              <p className="text-lg text-foreground/80">
+                Nosso diferencial é simples: <strong className="text-foreground">na NEW, o cliente está no centro de tudo.</strong> Não trabalhamos com modelos engessados, planos obrigatórios ou mensalidades que prendem você. Cada projeto é único, construído sob medida, com total liberdade para evoluir conforme as suas necessidades.
+              </p>
+              <p className="mt-6 text-lg text-foreground/80">
+                Mais do que entregar tecnologia, oferecemos parceria e suporte direto, sem burocracias e sem enrolação. Nosso compromisso é garantir que cada detalhe do seu projeto reflita exatamente a sua visão.
+              </p>
+            </CardContent>
+          </Card>
+          <blockquote className="text-center text-xl font-semibold text-primary/90 italic drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)]">
+            <p>"Na NEW, você não aluga uma ideia. Você é dono do seu futuro digital."</p>
+          </blockquote>
         </div>
       </div>
     </section>
