@@ -3,10 +3,12 @@
 import React from 'react';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import Hero3DAnimation from './hero-3d-animation';
 
 export default function HeroSection() {
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center p-4 overflow-hidden">
+      <Hero3DAnimation />
       <div className="absolute inset-0 particles z-0" />
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-10">
         <div className="text-center md:text-left animate-fadeIn">
