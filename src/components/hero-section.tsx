@@ -39,7 +39,7 @@ export default function HeroSection() {
         {/* Coluna da Esquerda: Texto e Botão */}
         <div className="text-left animate-fadeIn">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-            Transformamos ideias em <span className="text-primary">ativos digitais</span>.
+            A <span className="text-primary">tecnologia certa</span>, é a que se adapta com você.
           </h1>
           <p className="mt-4 text-lg text-foreground/80">
             Criamos experiências digitais únicas que impulsionam o seu negócio. Design, performance e inovação em cada detalhe.
