@@ -6,10 +6,13 @@ export default function AboutSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">SOBRE A NEW</h2>
+          <p className="mt-4 max-w-3xl mx-auto text-base md:text-lg text-foreground/80">
+            Nascemos para transformar ideias em ativos digitais de verdade.
+          </p>
         </div>
         <div className="mt-12 max-w-4xl mx-auto space-y-8">
           <p className="text-lg text-center text-foreground/80">
-            A NEW nasceu para transformar ideias em ativos digitais de verdade. Somos uma empresa especializada em sites profissionais, identidade visual e soluções online personalizadas, sempre com foco em inovação, performance e design futurista.
+            Somos uma empresa especializada em sites profissionais, identidade visual e soluções online personalizadas, sempre com foco em inovação, performance e design futurista.
           </p>
           <Card className="glassmorphism p-6 md:p-8 text-center transition-all duration-300 border-primary/30 hover:border-primary/80 hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.3)]">
             <CardContent className="p-0">
