@@ -8,37 +8,26 @@ import { ChevronDown } from 'lucide-react';
 
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
     };
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('mousemove', handleMouseMove);
-    }
+    window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('mousemove', handleMouseMove);
-      }
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
   const parallaxStyle = (factor: number) => {
-    if (!isClient) {
-      return {
-        transition: 'transform 0.2s ease-out',
-      };
-    }
-    const x = (mousePosition.x - window.innerWidth / 2) / (window.innerWidth / 2);
-    const y = (mousePosition.y - window.innerHeight / 2) / (window.innerHeight / 2);
+    const x = (mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth / 2 : 0)) / ((typeof window !== 'undefined' ? window.innerWidth / 2 : 0));
+    const y = (mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight / 2 : 0)) / ((typeof window !== 'undefined' ? window.innerHeight / 2 : 0));
     
     return {
       transform: `translateX(${x * factor}px) translateY(${y * factor}px)`,
-      transition: 'transform 0.2s ease-out',
+      transition: 'transform 0.1s ease-out',
     };
   };
 
@@ -46,20 +35,22 @@ export default function HeroSection() {
     <section id="home" className="relative h-screen w-full flex items-center justify-center text-center px-4 overflow-hidden">
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ 
-          ...parallaxStyle(-15),
-          backgroundImage: "url('/new-logo.png')",
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          scale: 1.1,
-        }}
-        data-ai-hint="logo neon"
+        style={parallaxStyle(-15)}
       >
+        <Image
+          src="/new-logo.png"
+          alt="NEW Logo"
+          layout="fill"
+          objectFit="contain"
+          className="scale-110"
+          priority
+          data-ai-hint="logo neon"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
       </div>
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start justify-center h-full text-left">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl" style={parallaxStyle(20)}>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground drop-shadow-lg">
             Transformamos ideias em ativos digitais.
           </h1>
@@ -69,13 +60,6 @@ export default function HeroSection() {
           <Button asChild size="lg" variant="outline" className="mt-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:drop-shadow-[0_0_8px_hsl(var(--primary))]">
               <Link href="#portfolio">Explore nossos projetos</Link>
           </Button>
-        </div>
-        
-        <div 
-          className="absolute inset-0 flex items-center justify-center pointer-events-none"
-          style={parallaxStyle(20)}
-        >
-          {/* This div is now empty to let the background logo be the focus */}
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center text-foreground/60 animate-bounce">
