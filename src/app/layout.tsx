@@ -1,10 +1,10 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import { Orbitron } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 
-const orbitron = Orbitron({ subsets: ['latin'] });
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'NEW - Soluções Digitais',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${orbitron.className} antialiased`}>
+      <body className={`${montserrat.className} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

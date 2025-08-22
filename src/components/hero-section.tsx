@@ -21,11 +21,11 @@ export default function HeroSection() {
           </Button>
         </div>
         <div className="flex items-center justify-center">
-          <div className="flex items-center text-7xl sm:text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.3)]">
+          <div className="flex items-center text-7xl sm:text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)]">
             <div>N</div>
             <div className="flex flex-col items-center justify-center mx-2 md:mx-4 space-y-4 md:space-y-6 h-[1em]">
               <div className="w-[0.5em] h-2 md:h-3 bg-primary rounded-full"></div>
-              <div className="w-[0.5em] h-2 md:h-3 bg-primary rounded-full"></div>
+              <div className="w-[0.35em] h-2 md:h-3 bg-primary rounded-full"></div>
               <div className="w-[0.5em] h-2 md:h-3 bg-primary rounded-full"></div>
             </div>
             <div>W</div>
