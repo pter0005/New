@@ -30,7 +30,19 @@ export default function AboutSection() {
           
           <div className="lg:sticky lg:top-20">
             <div className="relative text-left overflow-hidden rounded-lg">
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground interactive-glow py-4">SOBRE A NEW</h2>
+              <div className="flex items-center gap-4 text-3xl md:text-5xl font-bold text-foreground interactive-glow py-4">
+                <span>SOBRE A</span>
+                <div className="flex items-center text-primary drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)]">
+                  <span>N</span>
+                  <div className="flex flex-col items-center justify-center mx-1 md:mx-2 space-y-2 h-[1em]">
+                    <div className="w-[0.5em] h-1 md:h-1.5 bg-primary rounded-full"></div>
+                    <div className="w-[0.5em] h-1 md:h-1.5 bg-primary rounded-full"></div>
+                    <div className="w-[0.5em] h-1 md:h-1.5 bg-primary rounded-full"></div>
+                  </div>
+                  <span>W</span>
+                </div>
+              </div>
+
               <p className="mt-4 max-w-xl text-base md:text-lg text-foreground/80">
                 Nascemos para transformar ideias em ativos digitais de verdade.
               </p>
