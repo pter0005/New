@@ -15,8 +15,19 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 sm:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">Fale com a NEW</h2>
+        <div className="text-center flex justify-center">
+          <div className="flex items-center gap-4 text-3xl md:text-5xl font-bold text-foreground py-4">
+            <span>Fale com a</span>
+            <div className="flex items-center text-primary drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)]">
+              <span>N</span>
+              <div className="flex flex-col items-center justify-center mx-1 md:mx-2 space-y-2 h-[1em]">
+                <div className="w-[0.5em] h-1 md:h-1.5 bg-primary rounded-full"></div>
+                <div className="w-[0.5em] h-1 md:h-1.5 bg-primary rounded-full"></div>
+                <div className="w-[0.5em] h-1 md:h-1.5 bg-primary rounded-full"></div>
+              </div>
+              <span>W</span>
+            </div>
+          </div>
         </div>
         <div className="mt-16 max-w-lg mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">

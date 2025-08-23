@@ -5,7 +5,19 @@ export default function Footer() {
   return (
     <footer className="py-12 bg-black/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-foreground/70">
-        <p className="text-sm">© 2025 NEW – Construindo o futuro digital.</p>
+        <div className="flex items-center justify-center text-sm">
+          <span>© 2025</span>
+          <div className="flex items-center text-primary drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)] font-bold text-base mx-2">
+            <span>N</span>
+            <div className="flex flex-col items-center justify-center mx-1 space-y-1 h-[1em]">
+              <div className="w-[0.4em] h-[0.2em] bg-primary rounded-full"></div>
+              <div className="w-[0.4em] h-[0.2em] bg-primary rounded-full"></div>
+              <div className="w-[0.4em] h-[0.2em] bg-primary rounded-full"></div>
+            </div>
+            <span>W</span>
+          </div>
+          <span>– Construindo o futuro digital.</span>
+        </div>
         <div className="mt-4 flex justify-center space-x-6">
           <Link href="#home" className="text-sm hover:text-primary transition-colors">Home</Link>
           <Link href="#portfolio" className="text-sm hover:text-primary transition-colors">Portfólio</Link>
