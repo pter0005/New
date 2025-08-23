@@ -69,29 +69,23 @@
   .galaxy-background {
     background-color: #000;
     background-image:
-      radial-gradient(ellipse at 20% 20%, hsl(var(--primary) / 0.3) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 30%, hsl(var(--accent) / 0.2) 0%, transparent 50%),
-      radial-gradient(ellipse at 60% 80%, hsl(var(--primary) / 0.3) 0%, transparent 50%),
-      /* Starfield */
       radial-gradient(circle at 10% 30%, white 0.5px, transparent 1.5px),
       radial-gradient(circle at 90% 20%, white 0.5px, transparent 1.5px),
       radial-gradient(circle at 40% 80%, white 0.5px, transparent 1.5px),
       radial-gradient(circle at 70% 60%, white 0.5px, transparent 1.5px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 200px 200px, 300px 300px, 150px 150px, 250px 250px;
-    animation: galaxy-nebula 60s linear infinite;
+    background-size: 200px 200px, 300px 300px, 150px 150px, 250px 250px;
+    animation: galaxy-stars 60s linear infinite;
   }
 
-  @keyframes galaxy-nebula {
-    0% {
-      background-position: 0% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  @keyframes galaxy-stars {
+    from {
+      background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
     }
-    50% {
-      background-position: 100% 50%, -20% 40%, 20% -30%, 50% 50%, 20% 80%, 90% 10%, 30% 30%;
-    }
-    100% {
-      background-position: 0% 50%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    to {
+      background-position: -200px 50px, -300px 150px, -150px -150px, -250px -50px;
     }
   }
+
 
   .interactive-glow {
     background-image: radial-gradient(

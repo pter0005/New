@@ -15,7 +15,7 @@ import ScrollAnimator from '@/components/scroll-animator';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-background overflow-x-hidden">
+    <div className="relative min-h-screen bg-background overflow-x-hidden galaxy-background">
       <main>
         <HeroSection />
         <ScrollAnimator animationType="fadeInUp">
