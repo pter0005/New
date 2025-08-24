@@ -19,7 +19,7 @@ const traditionalMarket = [
 
 export default function MethodSection() {
   return (
-    <section id="method" className="py-20 sm:py-32">
+    <section id="method" className="py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center flex flex-col items-center">
             <div className="flex items-center gap-4 text-3xl md:text-5xl font-bold text-foreground py-4">
@@ -36,7 +36,7 @@ export default function MethodSection() {
             </div>
           <p className="mt-4 max-w-3xl mx-auto text-base md:text-lg text-foreground/80">Simples, sem burocracia, feito para você.</p>
         </div>
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           <Card className="glassmorphism border-2 border-primary/50 transition-all duration-300 p-2 sm:p-0">
             <CardHeader>
               <CardTitle className="text-xl md:text-2xl text-primary flex items-center gap-3">

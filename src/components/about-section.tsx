@@ -24,7 +24,7 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section id="about" className="py-20 sm:py-32" ref={containerRef}>
+    <section id="about" className="py-16 sm:py-20" ref={containerRef}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center flex flex-col items-center">
             <div className="flex items-center gap-4 text-3xl md:text-5xl font-bold text-foreground interactive-glow py-4">
@@ -45,7 +45,7 @@ export default function AboutSection() {
             </p>
         </div>
         
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="glassmorphism p-6 md:p-8 text-left transition-all duration-300 border-border/50 hover:border-primary/50 interactive-glow h-full">
               <CardContent className="p-0 space-y-4">
                 <p className="text-lg text-foreground/80">

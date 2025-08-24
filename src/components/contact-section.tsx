@@ -13,7 +13,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-32">
+    <section id="contact" className="py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center flex justify-center">
           <div className="flex items-center gap-4 text-3xl md:text-5xl font-bold text-foreground py-4">
@@ -29,7 +29,7 @@ export default function ContactSection() {
             </div>
           </div>
         </div>
-        <div className="mt-16 max-w-lg mx-auto">
+        <div className="mt-12 max-w-lg mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <Input

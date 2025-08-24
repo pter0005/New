@@ -52,7 +52,7 @@ const processSteps = [
 
 export default function WorkProcessSection() {
   return (
-    <section id="work-process" className="py-20 sm:py-32">
+    <section id="work-process" className="py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">Como Trabalhamos</h2>
@@ -60,7 +60,7 @@ export default function WorkProcessSection() {
             Nosso processo é transparente e colaborativo, garantindo entregas de alta qualidade.
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {processSteps.map((step, index) => (
             <Card key={index} className="relative group glassmorphism p-6 pt-12 text-center transition-all duration-300 hover:-translate-y-2 hover:border-primary/80 hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.3)] flex flex-col items-center">
               <div className="absolute top-4 left-4 h-8 w-8 flex items-center justify-center rounded-full bg-primary/20 text-primary font-bold text-lg">
