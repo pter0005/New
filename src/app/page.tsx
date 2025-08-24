@@ -4,6 +4,7 @@ import React from 'react';
 import HeroSection from '@/components/hero-section';
 import AboutSection from '@/components/about-section';
 import MethodSection from '@/components/method-section';
+import WorkProcessSection from '@/components/work-process-section';
 import PortfolioSection from '@/components/portfolio-section';
 import ServicesSection from '@/components/services-section';
 import FaqSection from '@/components/faq-section';
@@ -25,15 +26,18 @@ export default function Home() {
           <MethodSection />
         </ScrollAnimator>
         <ScrollAnimator animationType="fadeInUp">
+          <WorkProcessSection />
+        </ScrollAnimator>
+        <ScrollAnimator animationType="zoomInFadeIn">
           <PortfolioSection />
         </ScrollAnimator>
-        <ScrollAnimator animationType="zoomInFadeIn">
+        <ScrollAnimator animationType="fadeInUp">
           <ServicesSection />
         </ScrollAnimator>
-        <ScrollAnimator animationType="fadeInUp">
+        <ScrollAnimator animationType="zoomInFadeIn">
           <FaqSection />
         </ScrollAnimator>
-        <ScrollAnimator animationType="zoomInFadeIn">
+        <ScrollAnimator animationType="fadeInUp">
           <ContactSection />
         </ScrollAnimator>
       </main>
