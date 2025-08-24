@@ -61,10 +61,10 @@ export default function ContactSection() {
           </form>
           <div className="mt-12 flex justify-center items-center space-x-6">
             <Link href="#" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
-              <Instagram className="h-8 w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
+              <Instagram className="h-7 w-7 sm:h-8 sm:w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
             </Link>
             <Link href="#" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
-              <Linkedin className="h-8 w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
+              <Linkedin className="h-7 w-7 sm:h-8 sm:w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
             </Link>
           </div>
         </div>

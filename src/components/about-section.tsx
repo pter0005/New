@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
@@ -48,10 +47,10 @@ export default function AboutSection() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="glassmorphism p-6 md:p-8 text-left transition-all duration-300 border-border/50 hover:border-primary/50 interactive-glow h-full">
               <CardContent className="p-0 space-y-4">
-                <p className="text-lg text-foreground/80">
+                <p className="text-base md:text-lg text-foreground/80">
                   Somos uma agência digital especializada em criar sites profissionais, identidade visual e soluções online personalizadas, sempre com foco em inovação, performance e um design que olha para o futuro.
                 </p>
-                <p className="text-lg text-foreground/80">
+                <p className="text-base md:text-lg text-foreground/80">
                   Mais do que entregar tecnologia, oferecemos parceria e suporte direto, sem burocracias. Nosso compromisso é garantir que cada detalhe do seu projeto reflita exatamente a sua visão e supere suas expectativas.
                 </p>
               </CardContent>
@@ -62,7 +61,7 @@ export default function AboutSection() {
                 <p className="text-base md:text-lg text-foreground/80">
                   Nosso diferencial é simples: <strong className="text-foreground">na NEW, o cliente está no centro de tudo.</strong> Não trabalhamos com modelos engessados ou mensalidades que prendem você. Cada projeto é único, construído sob medida, com total liberdade para evoluir.
                 </p>
-                 <blockquote className="text-lg md:text-xl font-semibold text-primary/90 italic drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)] pt-6">
+                 <blockquote className="mt-6 text-base md:text-xl font-semibold text-primary/90 italic drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)]">
                   <p>"Na NEW, você não aluga uma ideia. Você é dono do seu futuro digital."</p>
                 </blockquote>
               </CardContent>

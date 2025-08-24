@@ -1,9 +1,7 @@
-
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Smartphone, ShoppingCart, Settings, LayoutDashboard, Code, BrainCircuit } from 'lucide-react';
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState } from "react";
 import {
@@ -11,14 +9,11 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
-  DialogTrigger,
-  DialogFooter,
 } from "@/components/ui/dialog";
 
 const services = [
   {
-    icon: <Smartphone className="h-8 w-8 text-primary" />,
+    icon: <Smartphone className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />,
     title: "Sites e Sistemas de Delivery",
     description: "Plataformas completas para restaurantes e lojas com cardápio digital, pedidos e pagamentos online.",
     example: {
@@ -28,7 +23,7 @@ const services = [
     }
   },
   {
-    icon: <ShoppingCart className="h-8 w-8 text-primary" />,
+    icon: <ShoppingCart className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />,
     title: "E-commerces Personalizados",
     description: "Soluções de vendas online completas e seguras.",
     example: {
@@ -38,7 +33,7 @@ const services = [
     }
   },
   {
-    icon: <Settings className="h-8 w-8 text-primary" />,
+    icon: <Settings className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />,
     title: "Sistemas Web Sob Medida",
     description: "Desenvolvimento de sistemas para otimizar seus processos.",
     example: {
@@ -48,7 +43,7 @@ const services = [
     }
   },
   {
-    icon: <LayoutDashboard className="h-8 w-8 text-primary" />,
+    icon: <LayoutDashboard className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />,
     title: "Dashboards & Admins",
     description: "Painéis de controle intuitivos para visualização de dados.",
     example: {
@@ -58,7 +53,7 @@ const services = [
     }
   },
   {
-    icon: <Code className="h-8 w-8 text-primary" />,
+    icon: <Code className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />,
     title: "Integrações com APIs",
     description: "Conectamos seus sistemas a serviços de terceiros.",
     example: {
@@ -68,7 +63,7 @@ const services = [
     }
   },
   {
-    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+    icon: <BrainCircuit className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />,
     title: "Soluções com IA",
     description: "Integramos inteligência artificial para automatizar tarefas.",
     example: {
@@ -93,22 +88,24 @@ export default function ServicesSection() {
             Soluções completas para transformar suas ideias em realidade digital.
           </p>
         </div>
-        <Dialog>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Dialog open={!!selectedService} onOpenChange={(isOpen) => !isOpen && setSelectedService(null)}>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group glassmorphism p-6 text-left transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.3)] flex flex-col">
-                <CardContent className="p-0 space-y-6 flex flex-col flex-grow">
+              <Card 
+                key={index} 
+                onClick={() => setSelectedService(service)}
+                className="group glassmorphism p-6 text-left transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.3)] flex flex-col cursor-pointer"
+              >
+                <CardContent className="p-0 space-y-4 sm:space-y-6 flex flex-col flex-grow">
                   <div className="flex items-center gap-4">
                     {service.icon}
-                    <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-foreground">{service.title}</h3>
                   </div>
                   <p className="text-sm text-foreground/70 min-h-[40px] flex-grow">{service.description}</p>
-                  <DialogTrigger asChild onClick={() => setSelectedService(service)}>
-                    <button className="flex items-center text-sm font-semibold text-primary/80 group-hover:text-primary transition-colors mt-auto">
-                      Ver Exemplo
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </button>
-                  </DialogTrigger>
+                  <div className="flex items-center text-sm font-semibold text-primary/80 group-hover:text-primary transition-colors mt-auto">
+                    Ver Exemplo
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -122,7 +119,7 @@ export default function ServicesSection() {
                   {selectedService.title}
                 </DialogTitle>
               </DialogHeader>
-              <div className="p-6 grid gap-6">
+              <div className="p-6 grid gap-6 max-h-[80vh] overflow-y-auto">
                 <div className="overflow-hidden rounded-lg">
                   <Image
                     src={selectedService.example.image}

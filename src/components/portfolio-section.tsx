@@ -62,7 +62,7 @@ export default function PortfolioSection() {
           </p>
         </div>
         <Dialog>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {projects.map((project, index) => (
               <DialogTrigger key={index} asChild onClick={() => setSelectedProject(project)}>
                 <Card className="group overflow-hidden relative glassmorphism border-border/50 hover:border-primary/80 transition-all duration-500 hover:shadow-[0_0_25px_hsl(var(--primary)_/_0.4)] hover:-translate-y-2 cursor-pointer">
@@ -75,8 +75,8 @@ export default function PortfolioSection() {
                     className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-6 md:p-8">
-                    <h3 className="text-xl md:text-3xl font-bold text-primary-foreground drop-shadow-[0_0_8px_hsl(var(--primary))]">{project.name}</h3>
+                  <div className="absolute bottom-0 left-0 p-4 sm:p-6 md:p-8">
+                    <h3 className="text-xl md:text-2xl font-bold text-primary-foreground drop-shadow-[0_0_8px_hsl(var(--primary))]">{project.name}</h3>
                     <p className="text-sm md:text-base text-primary-foreground/80">{project.type}</p>
                   </div>
                 </Card>
@@ -85,12 +85,12 @@ export default function PortfolioSection() {
           </div>
 
           {selectedProject && (
-            <DialogContent className="sm:max-w-5xl glassmorphism p-0 border-primary/30">
+            <DialogContent className="sm:max-w-3xl glassmorphism p-0 border-primary/30">
               <DialogHeader className="p-6 pb-0">
                 <DialogTitle className="text-2xl font-bold text-primary">{selectedProject.name}</DialogTitle>
                 <DialogDescription>{selectedProject.type}</DialogDescription>
               </DialogHeader>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 max-h-[80vh] overflow-y-auto">
                 <div className="space-y-4">
                    <Image
                       src={selectedProject.image}

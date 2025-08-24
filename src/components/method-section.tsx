@@ -37,7 +37,7 @@ export default function MethodSection() {
           <p className="mt-4 max-w-3xl mx-auto text-base md:text-lg text-foreground/80">Simples, sem burocracia, feito para você.</p>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          <Card className="glassmorphism border-2 border-primary/50 transition-all duration-300 p-2 sm:p-0">
+          <Card className="glassmorphism border-2 border-primary/50 transition-all duration-300 p-4 md:p-6">
             <CardHeader>
               <CardTitle className="text-xl md:text-2xl text-primary flex items-center gap-3">
                 <div className="text-2xl md:text-3xl font-black">NEW</div>
@@ -48,14 +48,14 @@ export default function MethodSection() {
               <ul className="space-y-4">
                 {newMethod.map((item, index) => (
                   <li key={index} className="flex items-start gap-3 text-sm md:text-base">
-                    <Check className="h-6 w-6 text-green-400 mt-1 flex-shrink-0" />
+                    <Check className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
                     <span className="font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
             </CardContent>
           </Card>
-          <Card className="glassmorphism border border-muted-foreground/30 transition-all duration-300 p-2 sm:p-0">
+          <Card className="glassmorphism border border-muted-foreground/30 transition-all duration-300 p-4 md:p-6">
             <CardHeader>
               <CardTitle className="text-xl md:text-2xl text-muted-foreground">Mercado Tradicional</CardTitle>
             </CardHeader>
@@ -63,7 +63,7 @@ export default function MethodSection() {
               <ul className="space-y-4">
                 {traditionalMarket.map((item, index) => (
                   <li key={index} className="flex items-start gap-3 text-sm md:text-base">
-                    <X className="h-6 w-6 text-red-500 mt-1 flex-shrink-0" />
+                    <X className="h-5 w-5 text-red-500 mt-1 flex-shrink-0" />
                     <span className="opacity-70">{item}</span>
                   </li>
                 ))}
@@ -71,7 +71,7 @@ export default function MethodSection() {
             </CardContent>
           </Card>
         </div>
-        <p className="mt-12 text-center text-lg md:text-xl font-semibold text-primary/90 px-4">
+        <p className="mt-12 text-center text-base md:text-xl font-semibold text-primary/90 px-4">
           Na NEW, você não aluga ideias. Você é dono do seu ativo digital.
         </p>
       </div>
