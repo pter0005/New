@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -61,7 +62,10 @@ export default function WorkProcessSection() {
         </div>
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {processSteps.map((step, index) => (
-            <Card key={index} className="group glassmorphism p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:border-primary/80 hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.3)] flex flex-col items-center">
+            <Card key={index} className="relative group glassmorphism p-6 pt-12 text-center transition-all duration-300 hover:-translate-y-2 hover:border-primary/80 hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.3)] flex flex-col items-center">
+              <div className="absolute top-4 left-4 h-8 w-8 flex items-center justify-center rounded-full bg-primary/20 text-primary font-bold text-lg">
+                {index + 1}
+              </div>
               <CardHeader className="p-0">
                 {step.icon}
               </CardHeader>
