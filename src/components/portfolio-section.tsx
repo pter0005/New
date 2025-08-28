@@ -37,6 +37,15 @@ const projects = [
     description: "Um site institucional moderno e dinâmico para uma equipe de produção de vídeo especializada em conteúdo gerado por IA. O foco era criar uma estética futurista e destacar seu trabalho inovador com animações e um design arrojado.",
     technologies: ["Next.js", "React", "Tailwind CSS", "ShadCN UI", "Framer Motion"]
   },
+   {
+    name: "Turf Domain",
+    type: "E-commerce de Grama Sintética",
+    image: "https://placehold.co/1920x1200.png",
+    hint: "grass ecommerce",
+    link: "https://www.turfdomain.com.br/",
+    description: "Uma plataforma de e-commerce completa para uma empresa líder em grama sintética, focada em usabilidade e conversão de vendas, com um design limpo e profissional.",
+    technologies: ["Next.js", "React", "Tailwind CSS", "E-commerce"]
+  },
   {
     name: "Neon Store",
     type: "Loja Virtual",
