@@ -38,12 +38,12 @@ const projects = [
     technologies: ["Next.js", "React", "Tailwind CSS", "ShadCN UI", "Framer Motion"]
   },
   {
-    name: "Neon Store",
+    name: "Sufgang",
     type: "Loja Virtual",
-    image: "https://placehold.co/1920x1200.png",
-    hint: "neon shop",
+    image: "https://i.imgur.com/2s3dY2q.png",
+    hint: "fashion store",
     link: "#",
-    description: "Uma plataforma de e-commerce para uma marca de moda com tema neon e cyberpunk. O objetivo era criar uma experiência de compra imersiva e visualmente cativante, integrando perfeitamente o catálogo de produtos com a identidade da marca.",
+    description: "Uma plataforma de e-commerce para uma marca de moda com uma estética dark e conceitual. O objetivo era criar uma experiência de compra imersiva e visualmente impactante, alinhada à identidade única da marca.",
     technologies: ["Next.js", "Shopify API", "Tailwind CSS", "Stripe"]
   },
   {
