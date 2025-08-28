@@ -22,7 +22,7 @@ const projects = [
   {
     name: "Pizza Nova",
     type: "Cardápio Digital",
-    image: "https://placehold.co/1920x1200.png",
+    image: "https://i.imgur.com/Ed9Oo8w.png",
     hint: "pizza website",
     link: "https://tangerine-lebkuchen-c4599f.netlify.app/",
     description: "Uma landing page e cardápio digital para uma pizzaria, com foco em um design moderno e apetitoso para atrair clientes e facilitar a visualização dos produtos.",
