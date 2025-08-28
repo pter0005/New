@@ -40,9 +40,9 @@ const projects = [
   {
     name: "Sufgang",
     type: "Loja Virtual",
-    image: "https://i.imgur.com/2s3dY2q.png",
+    image: "https://i.imgur.com/78iIp9n.png",
     hint: "fashion store",
-    link: "#",
+    link: "https://www.sufgang.com.br/",
     description: "Uma plataforma de e-commerce para uma marca de moda com uma estética dark e conceitual. O objetivo era criar uma experiência de compra imersiva e visualmente impactante, alinhada à identidade única da marca.",
     technologies: ["Next.js", "Shopify API", "Tailwind CSS", "Stripe"]
   },
@@ -63,11 +63,11 @@ export default function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="portfolio" className="py-16 sm:py-20">
+    <section id="portfolio" className="py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">Projetos que já transformamos</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-foreground/80">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">Projetos que já transformamos</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-foreground/80">
             Confira alguns dos projetos que tivemos o prazer de desenvolver.
           </p>
         </div>
@@ -85,9 +85,9 @@ export default function PortfolioSection() {
                     className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-4 sm:p-6 md:p-8">
-                    <h3 className="text-xl md:text-2xl font-bold text-primary-foreground drop-shadow-[0_0_8px_hsl(var(--primary))]">{project.name}</h3>
-                    <p className="text-sm md:text-base text-primary-foreground/80">{project.type}</p>
+                  <div className="absolute bottom-0 left-0 p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary-foreground drop-shadow-[0_0_8px_hsl(var(--primary))]">{project.name}</h3>
+                    <p className="text-sm sm:text-base text-primary-foreground/80">{project.type}</p>
                   </div>
                 </Card>
               </DialogTrigger>
