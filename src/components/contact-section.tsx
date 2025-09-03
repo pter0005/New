@@ -20,7 +20,7 @@ export default function ContactSection() {
     const formProps = Object.fromEntries(formData);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/new.contatar@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/b27ba263210b726a6b1c57b00645ca7d", {
         method: "POST",
         headers: { 
           'Content-Type': 'application/json',
