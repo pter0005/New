@@ -47,11 +47,11 @@ const projects = [
     technologies: ["Next.js", "Shopify API", "Tailwind CSS", "Stripe"]
   },
   {
-    name: "Personal example",
+    name: "Personal Trainer",
     type: "Dashboard Analítico",
-    image: "https://placehold.co/1920x1200.png",
+    image: "https://i.imgur.com/eiVreq3.png",
     hint: "data dashboard",
-    link: "#",
+    link: "https://personal-example.netlify.app/",
     description: "Um dashboard analítico personalizado para visualização de dados complexos em tempo real. A interface foi projetada para ser intuitiva, permitindo que os usuários filtrem e entendam as métricas de negócios de forma eficiente.",
     technologies: ["React", "D3.js", "Node.js", "PostgreSQL"]
   },
