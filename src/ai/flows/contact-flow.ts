@@ -1,6 +1,6 @@
 'use server';
 /**
- * @fileOverview A flow for handling contact form submissions and sending an email.
+ * @fileOverview A flow for handling contact form submissions and sending an email via Resend.
  * 
  * - sendContactMessage - A function that handles processing the contact form message.
  * - ContactFormInput - The input type for the sendContactMessage function.
@@ -9,7 +9,7 @@
 import 'dotenv/config';
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
-import * as nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 const ContactFormInputSchema = z.object({
   name: z.string(),
@@ -36,33 +36,20 @@ const contactFlow = ai.defineFlow(
   },
   async (input) => {
     const { name, email, message } = input;
+    const resendApiKey = process.env.RESEND_API_KEY;
 
-    // Nodemailer transporter setup with specific Gmail SMTP settings
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true, // Use SSL
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASS,
-      },
-    });
+    if (!resendApiKey) {
+      console.error("Erro: RESEND_API_KEY não está definida no arquivo .env");
+      throw new Error("O servidor de e-mail não está configurado. Contate o suporte.");
+    }
 
-    // Mail options
+    const resend = new Resend(resendApiKey);
+
     const mailOptions = {
-      from: `"${name}" <${process.env.GMAIL_USER}>`, // Use your email as sender
-      to: process.env.GMAIL_USER, // Send to your own email
-      replyTo: email, // Set the user's email for easy reply
+      from: 'onboarding@resend.dev', // Endereço de envio padrão do Resend
+      to: 'new.contatar@gmail.com', // Seu e-mail verificado no Resend
+      reply_to: email, // O e-mail do cliente, para você poder responder diretamente
       subject: `📩 Novo contato de ${name}`,
-      text: `
-        Você recebeu uma nova mensagem de contato:
-
-        Nome: ${name}
-        Email: ${email}
-        
-        Mensagem:
-        ${message}
-      `,
       html: `
         <h2>Nova mensagem de contato</h2>
         <p><strong>Nome:</strong> ${name}</p>
@@ -74,14 +61,19 @@ const contactFlow = ai.defineFlow(
     };
 
     try {
-      await transporter.sendMail(mailOptions);
+      const { data, error } = await resend.emails.send(mailOptions);
+
+      if (error) {
+        console.error("Erro detalhado ao enviar o e-mail pelo Resend:", error);
+        throw new Error("Houve um problema ao enviar sua mensagem. Por favor, tente novamente mais tarde.");
+      }
+
       return {
         success: true,
         message: "Obrigado por entrar em contato! Responderemos em breve.",
       };
     } catch (error) {
-      console.error("Erro detalhado ao enviar o e-mail:", error);
-      // It's better not to expose detailed error messages to the client.
+      console.error("Erro capturado no bloco catch:", error);
       throw new Error("Houve um problema ao enviar sua mensagem. Por favor, tente novamente mais tarde.");
     }
   }
