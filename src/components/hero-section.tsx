@@ -32,7 +32,7 @@ export default function HeroSection() {
         className="absolute inset-0 z-10 interactive-glow"
       />
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center z-20">
-        <div className="text-center md:text-left animate-fadeInUp">
+        <div className="text-center md:text-left animate-fadeInUp md:order-1 order-2">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
             A <span className="text-primary">tecnologia certa</span>, é a que se adapta com você.
           </h1>
@@ -43,7 +43,7 @@ export default function HeroSection() {
             <Link href="#contact">Fale com a NEW</Link>
           </Button>
         </div>
-        <div className="relative flex items-center justify-center animate-zoomInFadeIn">
+        <div className="relative flex items-center justify-center animate-zoomInFadeIn md:order-2 order-1">
           <div
             className="relative flex items-center text-6xl sm:text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)]"
           >
@@ -57,7 +57,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-       <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-background to-transparent z-20" />
+       <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-t from-background to-transparent z-20" />
     </section>
   );
 }
