@@ -77,7 +77,7 @@ export default function ContactSection() {
             {/* Disable Captcha */}
             <input type="hidden" name="_captcha" value="false" />
             {/* Fallback redirect */}
-            <input type="hidden" name="_next" value="https://new-code-zeta.vercel.app/" />
+            <input type="hidden" name="_next" value="https://new-tec.netlify.app/" />
 
             <Input 
               placeholder="Nome" 
