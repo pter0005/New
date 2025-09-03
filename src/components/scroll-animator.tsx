@@ -6,10 +6,9 @@ import { cn } from '@/lib/utils';
 interface ScrollAnimatorProps {
   children: React.ReactNode;
   className?: string;
-  animationType?: 'fadeInUp' | 'zoomInFadeIn';
 }
 
-export default function ScrollAnimator({ children, className, animationType = 'fadeInUp' }: ScrollAnimatorProps) {
+export default function ScrollAnimator({ children, className }: ScrollAnimatorProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -24,7 +23,7 @@ export default function ScrollAnimator({ children, className, animationType = 'f
         });
       },
       {
-        threshold: 0.1, 
+        threshold: 0.1,
       }
     );
 
@@ -40,17 +39,12 @@ export default function ScrollAnimator({ children, className, animationType = 'f
     };
   }, []);
 
-  const animationClass = {
-    fadeInUp: 'animate-fadeInUp',
-    zoomInFadeIn: 'animate-zoomInFadeIn',
-  }[animationType];
-
   return (
     <div
       ref={ref}
       className={cn(
-        'opacity-0', // Start with opacity 0
-        isVisible && animationClass, // Apply animation class when visible
+        'opacity-0 transition-all duration-700 ease-out',
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10',
         className
       )}
     >

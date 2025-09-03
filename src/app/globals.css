@@ -94,34 +94,4 @@
       transparent 20%
     );
   }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fadeInUp {
-    animation: fadeInUp 1.2s ease-out forwards;
-  }
-
-  @keyframes zoomInFadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.7);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  .animate-zoomInFadeIn {
-    animation: zoomInFadeIn 1s ease-out forwards;
-  }
 }
