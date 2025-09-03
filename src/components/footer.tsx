@@ -24,10 +24,10 @@ export default function Footer() {
           <Link href="#contact" className="text-sm hover:text-primary transition-colors">Contato</Link>
         </div>
         <div className="mt-6 flex justify-center items-center space-x-4">
-            <Link href="#" target="_blank" rel="noopener noreferrer" className="text-primary/70 hover:text-primary transition-colors">
+            <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-primary/70 hover:text-primary transition-colors">
               <Instagram className="h-6 w-6 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
             </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer" className="text-primary/70 hover:text-primary transition-colors">
+            <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primary/70 hover:text-primary transition-colors">
               <Linkedin className="h-6 w-6 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
             </Link>
           </div>
