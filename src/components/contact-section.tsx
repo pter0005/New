@@ -1,57 +1,12 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Instagram, Linkedin, Loader2 } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 import Link from "next/link";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
-import { useToast } from "@/hooks/use-toast";
-import { sendContactMessage } from "@/ai/flows/contact-flow";
-import { useState } from "react";
-
-const formSchema = z.object({
-  name: z.string().min(2, { message: "O nome deve ter pelo menos 2 caracteres." }),
-  email: z.string().email({ message: "Por favor, insira um e-mail válido." }),
-  message: z.string().min(10, { message: "A mensagem deve ter pelo menos 10 caracteres." }),
-});
 
 export default function ContactSection() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    setIsSubmitting(true);
-    try {
-      const response = await sendContactMessage(values);
-      toast({
-        title: "Mensagem Enviada!",
-        description: response.message,
-      });
-      form.reset();
-    } catch (error) {
-      toast({
-        title: "Erro ao Enviar",
-        description: "Houve um problema ao enviar sua mensagem. Tente novamente mais tarde.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section id="contact" className="py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,58 +25,49 @@ export default function ContactSection() {
           </div>
         </div>
         <div className="mt-12 max-w-lg mx-auto">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input placeholder="Nome" {...field} className="bg-secondary/40 border-border focus:border-primary focus:ring-primary" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input type="email" placeholder="E-mail" {...field} className="bg-secondary/40 border-border focus:border-primary focus:ring-primary" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Textarea placeholder="Mensagem" rows={5} {...field} className="bg-secondary/40 border-border focus:border-primary focus:ring-primary" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-transparent border-primary text-primary text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105 hover:drop-shadow-[0_0_10px_hsl(var(--primary))] disabled:opacity-50 disabled:hover:scale-100">
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Enviando...
-                  </>
-                ) : (
-                  "Enviar"
-                )}
-              </Button>
-            </form>
-          </Form>
+          <form
+            action="https://formsubmit.co/new.contatar@gmail.com"
+            method="POST"
+            className="space-y-6"
+          >
+            {/* Honeypot */}
+            <input type="text" name="_honey" style={{ display: 'none' }} />
+            {/* Disable Captcha */}
+            <input type="hidden" name="_captcha" value="false" />
+
+            <input type="hidden" name="_next" value="https://your-domain.co/thanks" />
+
+
+            <Input 
+              placeholder="Nome" 
+              name="name" 
+              className="bg-secondary/40 border-border focus:border-primary focus:ring-primary" 
+              required 
+            />
+            <Input 
+              type="email" 
+              placeholder="E-mail" 
+              name="email" 
+              className="bg-secondary/40 border-border focus:border-primary focus:ring-primary" 
+              required 
+            />
+            <Textarea 
+              placeholder="Mensagem" 
+              name="message"
+              rows={5} 
+              className="bg-secondary/40 border-border focus:border-primary focus:ring-primary" 
+              required 
+            />
+            <Button 
+              type="submit" 
+              size="lg" 
+              className="w-full bg-transparent border-primary text-primary text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105 hover:drop-shadow-[0_0_10px_hsl(var(--primary))]"
+            >
+              Enviar
+            </Button>
+          </form>
           <div className="mt-12 flex justify-center items-center space-x-6">
-            <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
+            <Link href="https://www.instagram.com/new.c0de/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
               <Instagram className="h-7 w-7 sm:h-8 sm:w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
             </Link>
             <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
