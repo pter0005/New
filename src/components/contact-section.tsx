@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Instagram, Linkedin } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 
@@ -114,9 +114,6 @@ export default function ContactSection() {
           <div className="mt-12 flex justify-center items-center space-x-6">
             <Link href="https://www.instagram.com/new.c0de/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
               <Instagram className="h-7 w-7 sm:h-8 sm:w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
-            </Link>
-            <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
-              <Linkedin className="h-7 w-7 sm:h-8 sm:w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
             </Link>
           </div>
         </div>
