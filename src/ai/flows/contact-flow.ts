@@ -37,9 +37,11 @@ const contactFlow = ai.defineFlow(
   async (input) => {
     const { name, email, message } = input;
 
-    // Nodemailer transporter setup
+    // Nodemailer transporter setup with specific Gmail SMTP settings
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true, // Use SSL
       auth: {
         user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_APP_PASS,
@@ -78,7 +80,7 @@ const contactFlow = ai.defineFlow(
         message: "Obrigado por entrar em contato! Responderemos em breve.",
       };
     } catch (error) {
-      console.error("Erro ao enviar o e-mail:", error);
+      console.error("Erro detalhado ao enviar o e-mail:", error);
       // It's better not to expose detailed error messages to the client.
       throw new Error("Houve um problema ao enviar sua mensagem. Por favor, tente novamente mais tarde.");
     }
