@@ -17,7 +17,7 @@ const services = [
     title: "Sites e Sistemas de Delivery",
     description: "Plataformas completas para restaurantes e lojas com cardápio digital, pedidos e pagamentos online.",
     example: {
-      image: "https://placehold.co/1920x1080.png",
+      image: "https://picsum.photos/1920/1080",
       hint: "delivery app",
       details: "Desenvolvemos plataformas de delivery totalmente personalizadas, integradas com gateways de pagamento e sistemas de gestão de pedidos. Ofereça uma experiência de compra fluida e profissional para seus clientes, com um painel administrativo intuitivo para você gerenciar tudo."
     }
@@ -27,7 +27,7 @@ const services = [
     title: "E-commerces Personalizados",
     description: "Soluções de vendas online completas e seguras.",
     example: {
-      image: "https://placehold.co/1920x1080.png",
+      image: "https://picsum.photos/1920/1080",
       hint: "ecommerce website",
       details: "Criamos lojas virtuais robustas e escaláveis, com design focado na conversão. Nossas soluções de e-commerce incluem cadastro de produtos, gestão de estoque, cálculo de frete, cupons de desconto e integração com as principais ferramentas de marketing do mercado."
     }
@@ -37,7 +37,7 @@ const services = [
     title: "Sistemas Web Sob Medida",
     description: "Desenvolvimento de sistemas para otimizar seus processos.",
     example: {
-      image: "https://placehold.co/1920x1080.png",
+      image: "https://picsum.photos/1920/1080",
       hint: "web system",
       details: "Transformamos processos manuais e complexos em sistemas web eficientes e intuitivos. Desenvolvemos desde CRMs e ERPs simplificados até plataformas complexas de gestão, tudo sob medida para as necessidades específicas do seu negócio, automatizando tarefas e centralizando informações."
     }
@@ -47,7 +47,7 @@ const services = [
     title: "Dashboards & Admins",
     description: "Painéis de controle intuitivos para visualização de dados.",
     example: {
-      image: "https://placehold.co/1920x1080.png",
+      image: "https://picsum.photos/1920/1080",
       hint: "admin dashboard",
       details: "Criamos painéis administrativos e dashboards que transformam dados brutos em insights valiosos. Monitore KPIs, acompanhe métricas em tempo real e tome decisões mais inteligentes com interfaces gráficas claras, interativas e fáceis de usar."
     }
@@ -57,7 +57,7 @@ const services = [
     title: "Integrações com APIs",
     description: "Conectamos seus sistemas a serviços de terceiros.",
     example: {
-      image: "https://placehold.co/1920x1080.png",
+      image: "https://picsum.photos/1920/1080",
       hint: "api integration",
       details: "Sua plataforma precisa conversar com outros sistemas? Nós fazemos a ponte. Realizamos integrações via API com gateways de pagamento, sistemas de automação de marketing, redes sociais, ferramentas de análise e qualquer outro serviço externo necessário para o seu fluxo de trabalho."
     }
@@ -67,7 +67,7 @@ const services = [
     title: "Soluções com IA",
     description: "Integramos inteligência artificial para automatizar tarefas.",
     example: {
-      image: "https://placehold.co/1920x1080.png",
+      image: "https://picsum.photos/1920/1080",
       hint: "ai solution",
       details: "Potencialize seu negócio com o poder da Inteligência Artificial. Desenvolvemos chatbots para atendimento, sistemas de recomendação de produtos, ferramentas de análise de dados e outras soluções de IA que automatizam tarefas, personalizam a experiência do usuário e geram eficiência."
     }
@@ -83,7 +83,7 @@ export default function ServicesSection() {
     <section id="services" className="py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">Nossos Serviços</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">Nossos Serviços</h2>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-foreground/80">
             Soluções completas para transformar suas ideias em realidade digital.
           </p>

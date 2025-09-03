@@ -43,7 +43,7 @@ export default function HeroSection() {
             <Link href="#contact">Fale com a NEW</Link>
           </Button>
         </div>
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center animate-zoomInFadeIn">
           <div
             className="relative flex items-center text-6xl sm:text-8xl md:text-9xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)]"
           >
