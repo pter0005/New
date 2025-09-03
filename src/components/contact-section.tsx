@@ -1,12 +1,55 @@
 "use client";
 
+import { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin } from 'lucide-react';
 import Link from "next/link";
+import { useToast } from "@/hooks/use-toast";
 
 export default function ContactSection() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    
+    const formData = new FormData(event.currentTarget);
+    const formProps = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/new.contatar@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formProps),
+      });
+
+      if (!response.ok) {
+        throw new Error("Houve um problema ao enviar sua mensagem.");
+      }
+
+      toast({
+        title: "Mensagem Enviada!",
+        description: "Obrigado por entrar em contato. Responderemos em breve.",
+      });
+      (event.target as HTMLFormElement).reset(); // Limpa o formulário
+    } catch (error) {
+      console.error(error);
+      toast({
+        variant: "destructive",
+        title: "Erro ao Enviar",
+        description: "Houve um problema ao enviar sua mensagem. Tente novamente mais tarde.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-16 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,23 +69,22 @@ export default function ContactSection() {
         </div>
         <div className="mt-12 max-w-lg mx-auto">
           <form
-            action="https://formsubmit.co/new.contatar@gmail.com"
-            method="POST"
+            onSubmit={handleSubmit}
             className="space-y-6"
           >
             {/* Honeypot */}
             <input type="text" name="_honey" style={{ display: 'none' }} />
             {/* Disable Captcha */}
             <input type="hidden" name="_captcha" value="false" />
-
-            <input type="hidden" name="_next" value="https://your-domain.co/thanks" />
-
+            {/* Fallback redirect */}
+            <input type="hidden" name="_next" value="https://new-code-zeta.vercel.app/" />
 
             <Input 
               placeholder="Nome" 
               name="name" 
               className="bg-secondary/40 border-border focus:border-primary focus:ring-primary" 
               required 
+              disabled={isSubmitting}
             />
             <Input 
               type="email" 
@@ -50,6 +92,7 @@ export default function ContactSection() {
               name="email" 
               className="bg-secondary/40 border-border focus:border-primary focus:ring-primary" 
               required 
+              disabled={isSubmitting}
             />
             <Textarea 
               placeholder="Mensagem" 
@@ -57,13 +100,15 @@ export default function ContactSection() {
               rows={5} 
               className="bg-secondary/40 border-border focus:border-primary focus:ring-primary" 
               required 
+              disabled={isSubmitting}
             />
             <Button 
               type="submit" 
               size="lg" 
               className="w-full bg-transparent border-primary text-primary text-base md:text-lg font-bold uppercase tracking-wider transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105 hover:drop-shadow-[0_0_10px_hsl(var(--primary))]"
+              disabled={isSubmitting}
             >
-              Enviar
+              {isSubmitting ? 'Enviando...' : 'Enviar'}
             </Button>
           </form>
           <div className="mt-12 flex justify-center items-center space-x-6">
