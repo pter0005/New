@@ -17,8 +17,9 @@ const navItems = [
   { href: "#home", label: "Início", icon: <Home className="h-5 w-5" /> },
   { href: "#about", label: "Quem Somos", icon: <User className="h-5 w-5" /> },
   { href: "#method", label: "Método", icon: <Wrench className="h-5 w-5" /> },
-  { href: "#portfolio", label: "Portfólio", icon: <Briefcase className="h-5 w-5" /> },
   { href: "#services", label: "Serviços", icon: <BotMessageSquare className="h-5 w-5" /> },
+  { href: "#work-process", label: "Como Trabalhamos", icon: <Wrench className="h-5 w-5" /> },
+  { href: "#portfolio", label: "Portfólio", icon: <Briefcase className="h-5 w-5" /> },
   { href: "#faq", label: "FAQ", icon: <Info className="h-5 w-5" /> },
   { href: "#contact", label: "Contato", icon: <MessageSquare className="h-5 w-5" /> },
 ];

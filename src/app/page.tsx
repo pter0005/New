@@ -26,13 +26,13 @@ export default function Home() {
           <MethodSection />
         </ScrollAnimator>
         <ScrollAnimator>
+          <ServicesSection />
+        </ScrollAnimator>
+        <ScrollAnimator>
           <WorkProcessSection />
         </ScrollAnimator>
         <ScrollAnimator>
           <PortfolioSection />
-        </ScrollAnimator>
-        <ScrollAnimator>
-          <ServicesSection />
         </ScrollAnimator>
         <ScrollAnimator>
           <FaqSection />
