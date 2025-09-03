@@ -30,7 +30,7 @@ const projects = [
   },
   {
     name: "Team VEO3",
-    type: "Website Institucional",
+    type: "E-commerce",
     image: "https://i.imgur.com/Tu4WgVV.png",
     hint: "ia videos",
     link: "https://www.teamveo3.com/",
@@ -47,7 +47,7 @@ const projects = [
     technologies: ["Next.js", "Shopify API", "Tailwind CSS", "Stripe"]
   },
   {
-    name: "Data Viz",
+    name: "Personal example",
     type: "Dashboard Analítico",
     image: "https://placehold.co/1920x1200.png",
     hint: "data dashboard",
