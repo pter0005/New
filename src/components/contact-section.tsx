@@ -132,8 +132,8 @@ export default function ContactSection() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Link href="https://wa.me/5511943157277?text=Ol%C3%A1%2C%20estou%20entrando%20em%20contato%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" className="text-[#25D366] hover:text-[#25D366]/90 transition-transform duration-300 hover:scale-110">
-                        <WhatsAppIcon className="h-9 w-9 sm:h-10 sm:w-10" />
+                    <Link href="https://wa.me/5511943157277?text=Ol%C3%A1%2C%20estou%20entrando%20em%20contato%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" className="text-[#25D366] hover:text-[#25D366]/90 transition-transform duration-200 hover:scale-125">
+                        <WhatsAppIcon className="h-10 w-10 sm:h-12 sm:w-12" />
                     </Link>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -142,8 +142,8 @@ export default function ContactSection() {
                 </Tooltip>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Link href="https://www.instagram.com/new.c0de/" target="_blank" rel="noopener noreferrer" className="text-primary/80 hover:text-primary transition-transform duration-300 hover:scale-110">
-                        <Instagram className="h-9 w-9 sm:h-10 sm:w-10 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
+                    <Link href="https://www.instagram.com/new.c0de/" target="_blank" rel="noopener noreferrer" className="text-primary/80 hover:text-primary transition-transform duration-200 hover:scale-125">
+                        <Instagram className="h-10 w-10 sm:h-12 sm:w-12 hover:drop-shadow-[0_0_8px_hsl(var(--primary))]" />
                     </Link>
                   </TooltipTrigger>
                   <TooltipContent>
