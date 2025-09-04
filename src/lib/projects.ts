@@ -12,7 +12,7 @@ export const projects = [
         {
             title: "Como funciona para o cliente?",
             points: [
-                "O cliente escaneia um QR Code na mesa e acessa o cardápio instantaneamente.",
+                "O cliente escaneia um QR Code na mesa e acessa o cardápio instantaneamente, sem precisar baixar nenhum aplicativo.",
                 "Navega pelas pizzas e bebidas, adicionando itens ao seu pedido com um clique.",
                 "Ao finalizar, o pedido é enviado diretamente para a cozinha, sem precisar chamar o garçom.",
                 "Pode acompanhar o status do pedido (ex: 'Em preparo', 'Pronto') pelo celular."
@@ -29,9 +29,9 @@ export const projects = [
         {
             title: "Tecnologia por trás da agilidade",
             points: [
-                "O sistema foi construído para ser extremamente rápido e responsivo, funcionando perfeitamente em qualquer celular.",
-                "Utiliza o Firebase para garantir que os pedidos e atualizações do cardápio aconteçam em tempo real, sem atrasos.",
-                "Acesso seguro para funcionários, garantindo que apenas pessoas autorizadas gerenciem o painel."
+                "A interface foi construída com Next.js para renderização rápida no lado do servidor, garantindo que o cardápio carregue quase instantaneamente.",
+                "Utilizamos o Firestore do Firebase, um banco de dados NoSQL em tempo real, para sincronizar pedidos entre o cliente e a cozinha sem atrasos.",
+                "O acesso ao painel administrativo é protegido pelo Firebase Authentication, garantindo que apenas funcionários autorizados gerenciem o sistema."
             ]
         }
     ]
@@ -47,19 +47,27 @@ export const projects = [
     technologies: ["Next.js", "React", "Tailwind CSS", "ShadCN UI", "Framer Motion"],
     details: [
         {
-            title: "Impacto Visual e Navegação",
+            title: "Impacto Visual e Navegação Intuitiva",
             points: [
-                "O site causa uma primeira impressão memorável com animações que guiam o usuário pela página de forma suave e intuitiva.",
+                "O site causa uma primeira impressão memorável, guiando o usuário pela página de forma suave para contar a história da marca.",
                 "O portfólio de vídeos é o centro das atenções, com uma galeria imersiva que carrega rapidamente e funciona bem em todos os dispositivos.",
-                "Cada elemento, dos botões aos menus, foi desenhado para reforçar a identidade de uma marca que está à frente do seu tempo."
+                "Cada elemento foi desenhado para reforçar a identidade de uma marca que está à frente do seu tempo."
             ]
         },
         {
-            title: "Foco em Resultados",
+            title: "Foco em Resultados e Conversão",
             points: [
-                "O site não é apenas bonito, ele foi projetado para converter visitantes em clientes.",
+                "O site não é apenas bonito, ele foi projetado para transformar visitantes em clientes com chamadas para ação claras.",
                 "Um formulário de contato direto e de fácil acesso permite que potenciais clientes solicitem orçamentos rapidamente.",
-                "A estrutura foi otimizada para os mecanismos de busca (SEO), ajudando a Team VEO3 a ser encontrada no Google por seus serviços."
+                "A estrutura foi otimizada para os mecanismos de busca (SEO), ajudando a Team VEO3 a ser encontrada no Google."
+            ]
+        },
+        {
+            title: "Tecnologia por trás da performance",
+            points: [
+                "Construído com Next.js, o site é gerado estaticamente (SSG), o que resulta em um carregamento ultra-rápido e excelente pontuação de SEO.",
+                "As animações são feitas com Framer Motion, que utiliza aceleração de hardware (GPU) para garantir transições suaves e fluidas a 60fps.",
+                "O uso de componentes ShadCN UI garante um design consistente, acessível e de fácil manutenção."
             ]
         }
     ]
@@ -79,7 +87,7 @@ export const projects = [
             points: [
                 "O cliente navega por coleções e produtos de forma fluida, com fotos de alta qualidade que valorizam cada detalhe das peças.",
                 "O processo de checkout é rápido e seguro, com poucas etapas para evitar que o cliente desista da compra.",
-                "Os clientes podem criar uma conta para salvar seus dados e acompanhar o status de entrega dos seus pedidos."
+                "Clientes podem criar uma conta para salvar seus dados e acompanhar o status de entrega dos seus pedidos."
             ]
         },
         {
@@ -87,7 +95,15 @@ export const projects = [
             points: [
                 "A loja é integrada com o sistema da Shopify, permitindo que a Sufgang gerencie produtos, estoque e pedidos de forma centralizada.",
                 "Os pagamentos são processados com segurança pela Stripe, uma das maiores e mais confiáveis plataformas do mundo.",
-                "Um sistema de busca inteligente ajuda os clientes a encontrarem exatamente o que procuram, seja por nome, categoria ou tamanho."
+                "Um sistema de busca inteligente ajuda os clientes a encontrarem exatamente o que procuram."
+            ]
+        },
+        {
+            title: "Tecnologia por trás da loja",
+            points: [
+                "Adotamos uma arquitetura de 'headless commerce', consumindo a API da Shopify. Isso nos deu total liberdade criativa no frontend com Next.js, mantendo o backend robusto da Shopify.",
+                "O frontend é desacoplado, o que permite atualizações de design e funcionalidades sem afetar a lógica de negócio do e-commerce.",
+                "A integração com a Stripe foi feita via API, garantindo um processo de pagamento seguro e compatível com as normas PCI."
             ]
         }
     ]
@@ -103,7 +119,7 @@ export const projects = [
     technologies: ["React", "D3.js", "Node.js", "PostgreSQL"],
     details: [
         {
-            title: "Acompanhamento de Alunos",
+            title: "Acompanhamento Inteligente de Alunos",
             points: [
                 "Visualize a evolução de cada aluno através de gráficos interativos de peso, medidas e performance nos treinos.",
                 "Filtre os dados por período para analisar o progresso semanal, mensal ou trimestral.",
@@ -111,7 +127,7 @@ export const projects = [
             ]
         },
         {
-            title: "Gestão de Treinos e Finanças",
+            title: "Gestão Centralizada do Negócio",
             points: [
                 "Acesse rapidamente a ficha de treino de cada aluno, facilitando o planejamento e ajustes.",
                 "Controle pagamentos e mensalidades em um só lugar, com indicadores visuais de quem está em dia ou com pendências.",
@@ -119,11 +135,11 @@ export const projects = [
             ]
         },
         {
-            title: "Plataforma Centralizada",
+            title: "Tecnologia por trás dos dados",
             points: [
-                "O sistema é seguro e apenas o personal trainer tem acesso aos dados de seus alunos.",
-                "A interface é limpa e intuitiva, projetada para ser usada tanto no computador quanto no tablet durante os treinos.",
-                "O painel foi construído para lidar com um grande número de alunos e dados sem perder a performance."
+                "O frontend em React consome uma API RESTful customizada, construída com Node.js, para buscar e manipular os dados.",
+                "Utilizamos a biblioteca D3.js para criar visualizações de dados e gráficos customizados, oferecendo mais flexibilidade que bibliotecas prontas.",
+                "O banco de dados PostgreSQL foi escolhido por sua robustez e capacidade de lidar com consultas complexas para gerar os relatórios de performance."
             ]
         }
     ]
