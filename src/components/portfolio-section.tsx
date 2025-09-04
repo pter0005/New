@@ -16,44 +16,164 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 const projects = [
   {
     name: "Pizza Nova",
-    type: "Cardápio Digital",
+    type: "Cardápio Digital & Sistema de Pedidos",
     image: "https://i.imgur.com/Ed9Oo8w.png",
     hint: "pizza website",
     link: "https://tangerine-lebkuchen-c4599f.netlify.app/",
     description: "Uma landing page e cardápio digital para uma pizzaria, com foco em um design moderno e apetitoso para atrair clientes e facilitar a visualização dos produtos.",
-    technologies: ["React", "Next.js", "Tailwind CSS"]
+    technologies: ["React", "Next.js", "Tailwind CSS", "Firebase"],
+    details: [
+        {
+            title: "Fluxo do Cliente",
+            points: [
+                "O cliente escaneia um QR Code único da mesa.",
+                "O site abre com o cardápio digital correspondente àquela mesa.",
+                "Ele escolhe os produtos (ex: prato principal, bebida, sobremesa).",
+                "Clica em “Finalizar Pedido”.",
+                "O pedido vai automaticamente para a cozinha e para o painel dos garçons."
+            ]
+        },
+        {
+            title: "Funcionalidades do Cliente",
+            points: [
+                "Visualização de cardápio com filtros por categoria.",
+                "Imagens dos pratos e descrição com preço.",
+                "Botão “+” para adicionar ao carrinho.",
+                "Tela de resumo do pedido, com valor total e tempo estimado.",
+                "Após pedido feito, o cliente vê um status em tempo real: “Em preparo” → “A caminho”."
+            ]
+        },
+        {
+            title: "Funcionalidades do Painel do Restaurante",
+            points: [
+                "Painel do administrador (ex: /admin): Cadastrar, editar e excluir produtos.",
+                "Ver todos os pedidos por mesa em tempo real.",
+                "Marcar pedidos como “Entregue”."
+            ]
+        },
+        {
+            title: "Estrutura e Tecnologia",
+            points: [
+                "Interface com cores do restaurante e design minimalista.",
+                "Responsivo: funciona perfeitamente em celulares.",
+                "Firestore: Banco de dados para cardápio e pedidos em tempo real.",
+                "Authentication: Login seguro para funcionários com e-mail/senha."
+            ]
+        }
+    ]
   },
   {
     name: "Team VEO3",
-    type: "E-commerce",
+    type: "Site Institucional com IA",
     image: "https://i.imgur.com/Tu4WgVV.png",
     hint: "ia videos",
     link: "https://www.teamveo3.com/",
-    description: "Um site institucional moderno e dinâmico para uma equipe de produção de vídeo especializada em conteúdo gerado por IA. O foco era criar uma estética futurista e destacar seu trabalho inovador com animações e um design arrojado.",
-    technologies: ["Next.js", "React", "Tailwind CSS", "ShadCN UI", "Framer Motion"]
+    description: "Um site institucional moderno e dinâmico para uma equipe de produção de vídeo especializada em conteúdo gerado por IA.",
+    technologies: ["Next.js", "React", "Tailwind CSS", "ShadCN UI", "Framer Motion"],
+    details: [
+        {
+            title: "Objetivo do Projeto",
+            points: [
+                "Criar uma vitrine digital impactante que refletisse a inovação da empresa.",
+                "Destacar o portfólio de vídeos gerados por IA de forma imersiva.",
+                "Transmitir uma imagem de vanguarda e alta tecnologia para atrair clientes B2B."
+            ]
+        },
+        {
+            title: "Funcionalidades Implementadas",
+            points: [
+                "Animações fluidas e microinterações com Framer Motion para uma experiência de usuário memorável.",
+                "Galeria de vídeos otimizada para carregamento rápido e performance.",
+                "Design system coeso utilizando ShadCN UI para consistência visual.",
+                "Formulário de contato integrado para captação de leads qualificados."
+            ]
+        },
+        {
+            title: "Diferenciais Técnicos",
+            points: [
+                "Arquitetura Next.js para renderização no servidor (SSR), garantindo SEO e performance.",
+                "Estética futurista e paleta de cores alinhada com o tema de inteligência artificial.",
+                "Layout totalmente responsivo, adaptado para desktops, tablets e smartphones."
+            ]
+        }
+    ]
   },
   {
     name: "Sufgang",
-    type: "Loja Virtual",
+    type: "E-commerce de Moda Conceitual",
     image: "https://i.imgur.com/78iIp9n.png",
     hint: "fashion store",
     link: "https://www.sufgang.com.br/",
-    description: "Uma plataforma de e-commerce para uma marca de moda com uma estética dark e conceitual. O objetivo era criar uma experiência de compra imersiva e visualmente impactante, alinhada à identidade única da marca.",
-    technologies: ["Next.js", "Shopify API", "Tailwind CSS", "Stripe"]
+    description: "Uma plataforma de e-commerce para uma marca de moda com uma estética dark e conceitual, focada em uma experiência de compra imersiva.",
+    technologies: ["Next.js", "Shopify API", "Tailwind CSS", "Stripe"],
+    details: [
+        {
+            title: "Experiência do Usuário (UX)",
+            points: [
+                "Navegação intuitiva focada na descoberta de produtos e coleções.",
+                "Checkout simplificado em poucas etapas para minimizar o abandono de carrinho.",
+                "Páginas de produto com galerias de imagens de alta resolução e zoom."
+            ]
+        },
+        {
+            title: "Funcionalidades de E-commerce",
+            points: [
+                "Integração com a API do Shopify para gerenciamento de produtos, estoque e pedidos.",
+                "Gateway de pagamento seguro com Stripe para transações com cartão de crédito.",
+                "Busca de produtos com filtros por categoria, tamanho e preço.",
+                "Área do cliente para acompanhamento de pedidos e histórico de compras."
+            ]
+        },
+        {
+            title: "Identidade Visual",
+            points: [
+                "Design dark e minimalista para alinhar com a estética conceitual da marca.",
+                "Uso de tipografia e fotografia para criar uma atmosfera imersiva e exclusiva.",
+                "Animações sutis que guiam o usuário sem distrair da experiência de compra."
+            ]
+        }
+    ]
   },
   {
     name: "Personal Trainer",
-    type: "Dashboard Analítico",
+    type: "Dashboard Analítico de Performance",
     image: "https://i.imgur.com/eiVreq3.png",
     hint: "data dashboard",
     link: "https://personal-example.netlify.app/",
-    description: "Um dashboard analítico personalizado para visualização de dados complexos em tempo real. A interface foi projetada para ser intuitiva, permitindo que os usuários filtrem e entendam as métricas de negócios de forma eficiente.",
-    technologies: ["React", "D3.js", "Node.js", "PostgreSQL"]
+    description: "Um dashboard analítico personalizado para visualização de dados complexos em tempo real, permitindo insights rápidos e eficientes.",
+    technologies: ["React", "D3.js", "Node.js", "PostgreSQL"],
+    details: [
+        {
+            title: "Visualização de Dados",
+            points: [
+                "Gráficos interativos (barras, linhas, pizza) para análise de métricas de vendas, usuários e engajamento.",
+                "Filtros dinâmicos por período, região e outras variáveis de negócio.",
+                "Exportação de relatórios em formato CSV e PDF."
+            ]
+        },
+        {
+            title: "Funcionalidades do Painel",
+            points: [
+                "KPIs (Key Performance Indicators) principais destacados em cards para visualização rápida.",
+                "Tabelas de dados com paginação, ordenação e busca em tempo real.",
+                "Sistema de alertas para métricas que atingem um determinado limiar."
+            ]
+        },
+        {
+            title: "Arquitetura e Performance",
+            points: [
+                "Backend robusto em Node.js para processamento e agregação de grandes volumes de dados.",
+                "Banco de dados PostgreSQL otimizado para consultas analíticas complexas.",
+                "Frontend reativo em React com D3.js para renderização eficiente de gráficos customizados.",
+                "Autenticação segura para garantir que apenas usuários autorizados acessem os dados."
+            ]
+        }
+    ]
   },
 ];
 
@@ -100,29 +220,44 @@ export default function PortfolioSection() {
                 <DialogTitle className="text-2xl font-bold text-primary">{selectedProject.name}</DialogTitle>
                 <DialogDescription>{selectedProject.type}</DialogDescription>
               </DialogHeader>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 max-h-[80vh] overflow-y-auto">
-                <div className="space-y-4">
-                   <Image
-                      src={selectedProject.image}
-                      alt={`Mockup do projeto ${selectedProject.name}`}
-                      width={1920}
-                      height={1200}
-                      className="rounded-lg object-cover"
-                    />
-                </div>
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-foreground">Sobre o Projeto</h4>
-                  <p className="text-sm text-foreground/80">{selectedProject.description}</p>
-                  <h4 className="font-semibold text-foreground">Tecnologias Utilizadas</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedProject.technologies.map(tech => (
-                      <Badge key={tech} variant="secondary" className="border-primary/50">{tech}</Badge>
+              <div className="p-6 max-h-[80vh] overflow-y-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                     <Image
+                        src={selectedProject.image}
+                        alt={`Mockup do projeto ${selectedProject.name}`}
+                        width={1920}
+                        height={1200}
+                        className="rounded-lg object-cover"
+                      />
+                      <h4 className="font-semibold text-foreground pt-4">Tecnologias Utilizadas</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProject.technologies.map(tech => (
+                          <Badge key={tech} variant="secondary" className="border-primary/50">{tech}</Badge>
+                        ))}
+                      </div>
+                  </div>
+                  <div className="space-y-6">
+                    {selectedProject.details.map((detail, index) => (
+                      <div key={index}>
+                        <h4 className="font-semibold text-foreground mb-2">{detail.title}</h4>
+                        <ul className="list-disc list-inside space-y-1 text-sm text-foreground/80">
+                            {detail.points.map((point, pIndex) => (
+                                <li key={pIndex}>{point}</li>
+                            ))}
+                        </ul>
+                      </div>
                     ))}
                   </div>
                 </div>
               </div>
-              <DialogFooter className="p-6 bg-black/30 rounded-b-lg">
-                <Button asChild variant="outline" className="bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+              <DialogFooter className="p-6 bg-black/30 rounded-b-lg flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                 <Button asChild variant="default" className="bg-primary text-primary-foreground hover:bg-primary/90 order-1 sm:order-2">
+                  <Link href="#contact">
+                    Quero um site assim <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 order-2 sm:order-1 mt-2 sm:mt-0">
                   <Link href={selectedProject.link} target="_blank" rel="noopener noreferrer">
                     Visitar o Site <ArrowUpRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -135,3 +270,5 @@ export default function PortfolioSection() {
     </section>
   );
 }
+
+    
