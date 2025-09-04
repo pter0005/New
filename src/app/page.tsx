@@ -9,7 +9,6 @@ import PortfolioSection from '@/components/portfolio-section';
 import ServicesSection from '@/components/services-section';
 import FaqSection from '@/components/faq-section';
 import ContactSection from '@/components/contact-section';
-import WhatsAppFAB from '@/components/whatsapp-fab';
 import Footer from '@/components/footer';
 import DockNav from '@/components/dock-nav';
 import ScrollAnimator from '@/components/scroll-animator';
@@ -42,7 +41,6 @@ export default function Home() {
         </ScrollAnimator>
       </main>
       <Footer />
-      <WhatsAppFAB />
       <DockNav />
     </div>
   );
