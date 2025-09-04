@@ -5,7 +5,7 @@ export const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
       height="24"
       viewBox="0 0 24 24"
       fill="currentColor"
-      stroke="currentColor"
+      stroke="none"
       strokeWidth="0"
       strokeLinecap="round"
       strokeLinejoin="round"

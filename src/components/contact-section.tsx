@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Instagram, Send } from 'lucide-react';
+import { WhatsAppIcon } from "@/components/icons";
 import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 
@@ -122,8 +123,11 @@ export default function ContactSection() {
                 <h3 className="relative bg-background px-4 text-lg font-semibold">Ou fale direto conosco!</h3>
             </div>
             <div className="mt-6 flex justify-center items-center space-x-6">
-                <Link href="https://www.instagram.com/new.c0de/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
-                <Instagram className="h-7 w-7 sm:h-8 sm:w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
+                 <Link href="https://wa.me/5511943157277?text=Ol%C3%A1%2C%20estou%20entrando%20em%20contato%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" className="text-primary/80 hover:text-primary transition-colors">
+                    <WhatsAppIcon className="h-7 w-7 sm:h-8 sm:w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
+                </Link>
+                <Link href="https://www.instagram.com/new.c0de/" target="_blank" rel="noopener noreferrer" className="text-primary/80 hover:text-primary transition-colors">
+                    <Instagram className="h-7 w-7 sm:h-8 sm:w-8 hover:drop-shadow-[0_0_5px_hsl(var(--primary))]" />
                 </Link>
             </div>
         </div>
